@@ -145,3 +145,18 @@ behind each estimate (0–100 = anchor scale; rings only where benchmark-evidenc
 Era 1–2 note: both R sub-axes carry the Hendrycks composite (0, 70) since no
 era-1/2 static/dynamic decomposition was published — the split is only
 evidenced in era 3. Documented in radar_scores.csv header.
+
+### [2026-07-03 14:16 -04:00] claude — draft
+Built code/radar.py (stdlib-only SVG string assembly, following the fixture
+thread's byte-stability pattern) and generated radar.svg (the artifact).
+Verified deterministic: two runs, identical SHA-256
+aa89cef38357d64fe5e440042e58399338cc7fa75c017b00c5ee98c6140a751a.
+Spiral order came out: K, M (Virtuoso) → RW (Expert) → R-static (anchor) →
+A 80 → V 70 → MR/WM 60 → S 40 → MS 10 → R-dynamic 5. The picture reads
+exactly as the lost artifact's finding, sharpened: a jagged profile that has
+burst through the human-anchor ring on knowledge-side axes while dynamic
+reasoning and long-term memory storage stay pinned near zero.
+recipe.md written to the 5-section standard (claim, inputs, data, method
+with the judgment calls, regenerate with pinned runtime + artifact hash).
+Next: codex consult to critique the era-3 estimates — specifically the two
+weakest cells (S, V) and the ring placements.

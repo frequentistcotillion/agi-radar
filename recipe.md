@@ -1,13 +1,76 @@
 <!-- Write as you work, not retroactively. closeout.py refuses without all 5. -->
 ## Claim
 
+`radar.svg` asserts: measured on Hendrycks et al.'s ten CHC cognitive domains
+(with On-the-Spot Reasoning split into static vs dynamic), frontier AI in
+mid-2026 (Mythos-class) is at or above the well-educated-adult anchor on
+Knowledge (Virtuoso), Mathematics (Virtuoso), Reading & Writing (Expert), and
+static reasoning (anchor) — while remaining far below the anchor on dynamic
+reasoning (~5/100, ARC-AGI-3), long-term memory storage (~10/100, the
+standing bottleneck), and materially below it on working memory, memory
+retrieval, visual, auditory, and speed. The capability profile is jagged and
+the static/dynamic reasoning split (~100 vs ~5) is its sharpest asymmetry.
+Era-1/2 series (GPT-4 27%, GPT-5 57%) are the paper's own scores; the era-3
+series is this thread's benchmark-mapped estimate, not a published score.
+
 ## Inputs
+
+- Hendrycks, D. et al. (2025). *A Definition of AGI*. arXiv:2510.18212v3.
+  → `refs/hendrycks-2025-a-definition-of-agi-2510.18212v3.pdf`
+- Morris, M. R. et al. (Google DeepMind, 2023). *Levels of AGI:
+  Operationalizing Progress on the Path to AGI*. arXiv:2311.02462.
+  → `refs/morris-2023-levels-of-agi-2311.02462.pdf`
+- Genewein, T. et al. (Google DeepMind, 2026). *From AGI to ASI*.
+  arXiv:2606.12683v1. → `refs/genewein-2026-from-agi-to-asi-2606.12683v1.pdf`
+- All three retrieved 2026-07-03 from arxiv.org; SHA-256 in `refs/SHA256SUMS`.
+- Era-3 benchmark scores: public leaderboards/reports retrieved 2026-07-03,
+  itemized with sources in `data/era3_evidence.csv`.
 
 ## Data
 
+- `data/hendrycks_table1.csv` — Table 1 of arXiv:2510.18212v3 (per-domain
+  contributions for GPT-4 and GPT-5), verified 2026-07-03 by grep against
+  arxiv.org/html/2510.18212v3 (not a model summary). Retrieval date and URL
+  in file header.
+- `data/era3_evidence.csv` — per-axis mid-2026 SOTA evidence: benchmark,
+  score, model, as-of date, human baseline, source. Retrieved 2026-07-03.
+- `data/radar_scores.csv` — the derived plotting series (input to
+  `code/radar.py`): eras 1–2 from hendrycks_table1 (×10 to the 0–100 anchor
+  scale), era 3 estimated from era3_evidence per the Method judgment calls.
+
 ## Method
+
+1. Axes = Hendrycks' ten CHC domains with R split into R-static / R-dynamic
+   (11 axes). Rationale (THREAD.md decision turn 2026-07-03 14:10): the
+   static/dynamic gap is the most decision-relevant finding and averaging
+   hides it; no other domain has an equally clean public decomposition.
+2. Radial scale: 1.0 = Hendrycks' well-educated-adult anchor, so eras 1–2
+   plot verbatim. Above the anchor, GDM performance levels (Morris:
+   Expert=90th pct, Virtuoso=99th) and Genewein collective levels (research
+   team, enterprise) are ORDINAL rings at 1.25/1.50/1.75/2.00 — equal visual
+   spacing, explicitly not linear. Competent (50th) drawn at 0.5 as an
+   interior reference.
+3. Ring placement rule: an era-3 axis crosses a ring only on benchmark
+   evidence of beating humans at that percentile on the mapped benchmark
+   (e.g. IMO gold ⇒ M at Virtuoso; GPQA-D 94% vs 65% experts ⇒ K at
+   Virtuoso; LongBench v2 64.4% vs 53.7% experts ⇒ RW at Expert; ARC-AGI-2
+   85% vs 60% panel ⇒ R-static at anchor only — panel is median-human, not
+   expert). Sub-anchor axes take judged 0–100 scores; per-axis reasoning in
+   THREAD.md research turn 2026-07-03 14:14. Weakest-evidenced cells: S
+   (no clean public benchmark; held near era-2) and V (MMMU-Pro exceeds
+   experts but Gv-construct tasks still fail; scored 70 below anchor).
+4. Era-1/2 values for both R sub-axes carry the paper's composite R (0, 70)
+   — the decomposition is only evidenced in era 3.
+5. Rendering (`code/radar.py`, stdlib-only string assembly for byte
+   stability): axes sorted by era-3 radial descending (tie-break: label),
+   highest at 12 o'clock, clockwise — the spiral. Three translucent era
+   polygons, anchor ring emphasized, ordinality footnoted on the chart.
 
 ## Regenerate
 ```
+cd code
+python3 radar.py            # reads ../data/radar_scores.csv, writes ../radar.svg
+sha256sum ../radar.svg      # aa89cef38357d64fe5e440042e58399338cc7fa75c017b00c5ee98c6140a751a
 ```
-Runtime:
+Runtime: Python 3.12.3 (Ubuntu 24.04), stdlib only (csv, math, sys). Output
+`radar.svg` is deterministic; the SHA-256 above is the pinned artifact hash.
