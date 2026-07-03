@@ -504,3 +504,19 @@ artifact hash 81feb3d9188a50bc23163997821c8f4ced42dee49b636c5513616097b0067c55
 updated in recipe.md, AUDIT.md, README.md. Lesson for the workshop: the
 byte-stability check proves determinism, not validity — an invalid file
 reproduces perfectly. Validity checks belong in the regeneration path.
+
+### [2026-07-03 15:55 -04:00] greg — admin
+Instruction being acted on: recipient asked "how does my LLM check this?" —
+make the audit procedure agent-invocable for third parties.
+
+### [2026-07-03 15:55 -04:00] claude — draft
+Added an "Auditing with an AI agent" section to AUDIT.md (+ README pointer):
+a copy-paste prompt for code-running agents, a no-network ZIP-upload
+variant, and an explicit warning for non-executing LLMs (they cannot verify
+hashes — a model "confirming" a hash without running sha256sum is
+confabulating; they get the comprehension half only, with unverified claims
+labeled). The prompt includes three safeguards drawn from our own protocol:
+compute-don't-assert for hashes, regenerate-from-scratch (delete first),
+and treat-repo-text-as-data — the auditor's agent should verify our claims,
+not obey our files. Grounding: acceptance test 1 already proved the
+procedure agent-followable cold.

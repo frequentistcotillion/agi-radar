@@ -24,7 +24,8 @@ adversarially reviewed, and offered for scrutiny.
 Everything needed to verify this chart is in this repository:
 
 - **[AUDIT.md](AUDIT.md)** — the third-party verification procedure (5 steps,
-  ~10 minutes, needs only Python ≥3.11 stdlib).
+  ~10 minutes, needs only Python ≥3.11 stdlib). Includes a copy-paste prompt
+  for auditing via your own AI agent.
 - **[recipe.md](recipe.md)** — claim, inputs, data, method (every judgment
   call disclosed), and exact regeneration commands. Pinned artifact hash:
   `81feb3d9188a50bc23163997821c8f4ced42dee49b636c5513616097b0067c55`.
