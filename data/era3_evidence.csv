@@ -5,11 +5,12 @@ axis,benchmark,sota_score,sota_model,as_of,human_baseline,source
 K,GPQA Diamond,94.3%,Gemini 3.1 Pro (Opus 4.7 94.2 / Opus 4.8 93.6 / GPT-5.2 92.4),2026-06,~65% PhD-level domain experts,benchlm.ai/benchmarks/gpqaDiamond; epoch.ai/benchmarks/gpqa-diamond
 RW,LongBench v2,64.4%,Claude Opus 4.5,2026-06-18,53.7% human experts (time-constrained),llm-stats.com/benchmarks/longbench-v2; benchlm.ai/benchmarks/longBenchV2
 M,FrontierMath T1-3 / IMO,">40% FM T1-3; IMO gold 35/42 (2025)",Gemini 3 Deep Think,2026-early,IMO gold ~=99.99th pct individual; FM problems stump professional mathematicians,bracai.eu/post/llm-math-benchmark; intuitionlabs.ai IMO article
-R-static,ARC-AGI-2,85%,GPT-5.5 (GPT-5.4 Pro 83.3 / Gemini 3.1 Pro 77.1),2026-06-18,~60% human panel average; every task solved by >=2 humans,arcprize.org/leaderboard; benchlm.ai/benchmarks/arcAgi2
+R-static,ARC-AGI-2,"54.2% GPT-5.2 Pro / 54.0% Gemini 3 Pro standalone; 72.9% specialized solver (semi-private)","(85% GPT-5.5 aggregator claim UNVERIFIED at primary source; excluded)",2026-06,~60% human panel average; every task solved by >=2 humans,arcprize.org; June-2026 ARC-AGI-2 solver paper (via codex consult 2026-07-03)
 R-dynamic,ARC-AGI-3,<1%,all frontier systems,2026-03,humans complete most games without instructions,arcprize.org/arc-agi/3; arxiv.org/abs/2603.24621
 WM,MRCR v2 8-needle 512K-1M,76% / 74%,Claude Opus 4.6 / GPT-5.5,2026-03,n/a (no human does 1M tokens; RULER shows 50-65% effective window use),awesomeagents.ai long-context leaderboard; codingfleet.com 2026 analysis
 MS,MemoryBench / Continual Learning Bench,"SOTA 'far from satisfying' (authors)",n/a,2026-06,humans accumulate skills/knowledge continuously,arxiv.org/abs/2510.17281; arxiv.org/pdf/2606.05661
 MR,SimpleQA-family hallucination,3.1-9.4% halluc. (extended thinking ~4-5%),GPT-5.5 Pro 4.2 / Opus 4.7 5.1,2026,humans: low confabulation but limited recall breadth,digitalapplied.com hallucination benchmarks 2026
-V,MMMU-Pro,94% / 92.7%,GPT-5.4 Pro / Claude Mythos 5 & Fable 5,2026-06-09,76.2-88.6% human experts (MMMU paper),benchlm.ai/benchmarks/mmmuPro; artificialanalysis.ai/evaluations/mmmu-pro
+V,BLINK (Gv-construct: 14 classic perception tasks),~70.7%,Qwen3 VL 235B (top tracked),2026-06,95.7% humans (most tasks solved "within a blink"),llm-stats.com/benchmarks/blink; arxiv.org/abs/2404.12390
+V-secondary,MMMU-Pro (knowledge-heavy; NOT the Gv headline),94% / 92.7%,GPT-5.4 Pro / Claude Mythos 5 & Fable 5,2026-06-09,76.2-88.6% human experts (MMMU paper),benchlm.ai/benchmarks/mmmuPro
 A,MMAU,~75.6% (test) / 78.2% (test-mini),EvA-class audio systems,2026,human accuracy ~82% (MMAU paper),mmaubench.github.io; llm-stats.com/benchmarks/mmau
-S,(no clean public benchmark),n/a,n/a,2026,Hendrycks S measures psychometric processing speed; kept near era-2 value,judgment call - see THREAD.md decision turn
+S,(no clean public benchmark),n/a,n/a,2026,Hendrycks S = psychometric processing speed; NO evidence of change -> era-2 value carried unchanged (low confidence),judgment call per codex consult 2026-07-03 - see THREAD.md decision turns

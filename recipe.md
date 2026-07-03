@@ -4,12 +4,12 @@
 `radar.svg` asserts: measured on Hendrycks et al.'s ten CHC cognitive domains
 (with On-the-Spot Reasoning split into static vs dynamic), frontier AI in
 mid-2026 (Mythos-class) is at or above the well-educated-adult anchor on
-Knowledge (Virtuoso), Mathematics (Virtuoso), Reading & Writing (Expert), and
-static reasoning (anchor) — while remaining far below the anchor on dynamic
-reasoning (~5/100, ARC-AGI-3), long-term memory storage (~10/100, the
-standing bottleneck), and materially below it on working memory, memory
-retrieval, visual, auditory, and speed. The capability profile is jagged and
-the static/dynamic reasoning split (~100 vs ~5) is its sharpest asymmetry.
+Mathematics (Virtuoso ring), Knowledge (Expert ring), and Reading & Writing
+(anchor), with static reasoning just below the anchor (~85) — while
+remaining far below the anchor on dynamic reasoning (~5/100, ARC-AGI-3),
+long-term memory storage (~10/100, the standing bottleneck), and materially
+below it on working memory, memory retrieval, visual, auditory, and speed. The capability profile is jagged and
+the static/dynamic reasoning split (~85 vs ~5) is its sharpest asymmetry.
 Era-1/2 series (GPT-4 27%, GPT-5 57%) are the paper's own scores; the era-3
 series is this thread's benchmark-mapped estimate, not a published score.
 
@@ -51,14 +51,20 @@ series is this thread's benchmark-mapped estimate, not a published score.
    spacing, explicitly not linear. Competent (50th) drawn at 0.5 as an
    interior reference.
 3. Ring placement rule: an era-3 axis crosses a ring only on benchmark
-   evidence of beating humans at that percentile on the mapped benchmark
-   (e.g. IMO gold ⇒ M at Virtuoso; GPQA-D 94% vs 65% experts ⇒ K at
-   Virtuoso; LongBench v2 64.4% vs 53.7% experts ⇒ RW at Expert; ARC-AGI-2
-   85% vs 60% panel ⇒ R-static at anchor only — panel is median-human, not
-   expert). Sub-anchor axes take judged 0–100 scores; per-axis reasoning in
-   THREAD.md research turn 2026-07-03 14:14. Weakest-evidenced cells: S
-   (no clean public benchmark; held near era-2) and V (MMMU-Pro exceeds
-   experts but Gv-construct tasks still fail; scored 70 below anchor).
+   evidence of beating humans at that percentile on the mapped benchmark.
+   After adversarial codex consult (turns of 2026-07-03 14:18–14:20):
+   M = Virtuoso (IMO gold — percentile-rich selected population; contest
+   math, not research math); K = Expert, downgraded from Virtuoso (GPQA-D
+   94% vs ~65% mean-expert baseline is not a 99th-percentile calibration);
+   RW = anchor, Expert ring removed (LongBench v2 is long-context reading
+   under time constraint, not writing, and not 90th-pct evidence);
+   R-static = 85 no ring, downgraded from anchor (the 85% ARC-AGI-2
+   aggregator claim could not be verified at a primary source; verified
+   figures are 54.2% standalone frontier / 72.9% specialized solver vs ~60%
+   human panel); V = 70 with BLINK as the Gv-construct headline (humans
+   95.7% vs ~70.7% SOTA — MMMU-Pro demoted to secondary as knowledge-heavy);
+   S = 30, era-2 value carried unchanged (no benchmark, no evidence of
+   change — lowest-confidence cell).
 4. Era-1/2 values for both R sub-axes carry the paper's composite R (0, 70)
    — the decomposition is only evidenced in era 3.
 5. Rendering (`code/radar.py`, stdlib-only string assembly for byte
@@ -70,7 +76,7 @@ series is this thread's benchmark-mapped estimate, not a published score.
 ```
 cd code
 python3 radar.py            # reads ../data/radar_scores.csv, writes ../radar.svg
-sha256sum ../radar.svg      # aa89cef38357d64fe5e440042e58399338cc7fa75c017b00c5ee98c6140a751a
+sha256sum ../radar.svg      # f3360b8eb6d8b74be8e65652a365fcb2f59930f2dd4d6e7228b1283e9e64a5fc
 ```
 Runtime: Python 3.12.3 (Ubuntu 24.04), stdlib only (csv, math, sys). Output
 `radar.svg` is deterministic; the SHA-256 above is the pinned artifact hash.

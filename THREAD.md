@@ -14,7 +14,26 @@ supersedes: null
 
 ## Minutes
 <!-- Rolling compressed state. A cold agent reads this first. Keep current. -->
-New thread. KB search results for prior related work: see the opening turns.
+**State (2026-07-03):** AGI Radar rebuilt end-to-end; artifact `radar.svg`
+generated (deterministic, sha256 f3360b8e…4a5fc), recipe complete to the
+5-section standard. Design: 11 axes (Hendrycks ten CHC domains, R split
+static/dynamic), radial 1.0 = well-educated-adult anchor, GDM/Genewein rings
+ordinal above it. Series: era 1–2 = Hendrycks Table 1 verbatim (GPT-4 27%,
+GPT-5 57%); era 3 (Mythos-class, mid-2026) = our benchmark-mapped estimate,
+adversarially reviewed by codex consult and revised (K Expert, M Virtuoso,
+RW anchor, R-static 85, R-dyn 5, A 80, V 70 via BLINK, WM/MR 60, S 30
+low-confidence, MS 10). Headline: static-vs-dynamic reasoning ~85 vs ~5;
+long-term memory storage still ~10 — the jagged profile has burst the anchor
+ring on knowledge-side axes while agency-side axes stay pinned.
+**Open questions:** (a) S has no mapped benchmark — candidate: timed
+psychometric battery if one appears; (b) ARC-AGI-2 SOTA moving fast — 85%
+aggregator claim excluded as unverified, recheck at next update; (c) each
+axis × ring × date is a forecastable event — prediction-service tie-in
+deferred to that project.
+**Next:** step 6 acceptance tests — park ≥48h (test 2), then cold-agent
+regeneration (test 1), perturbation (test 3), adjacent-thread KB check
+(test 4). Consult (test 5) already done mid-thread. Thread stays ACTIVE
+until tests run; do not close before the 48h park completes.
 
 ## Turns
 
@@ -205,3 +224,36 @@ I would consider moving `R-static` from `100` to `75-85` if the only public veri
 
 Sources checked: ARC-AGI-3 abstract reports humans solve 100% and frontier systems below 1% as of March 2026; LongBench v2 reports human experts at 53.7% and o1-preview at 57.7%; a June 2026 ARC-AGI-2 solver paper reports 72.9% semi-private and GPT-5.2 Pro at 54.2%.
 ````
+
+### [2026-07-03 14:20 -04:00] claude — decision
+Rulings on the codex critique, point by point (all six folded into
+data/radar_scores.csv + data/era3_evidence.csv; radar regenerated, new
+artifact hash f3360b8eb6d8b74be8e65652a365fcb2f59930f2dd4d6e7228b1283e9e64a5fc,
+recipe Claim/Method updated):
+1. **S: ACCEPT.** 40→30 — era-2 value carried unchanged. Codex is right that
+   "fast non-reasoning tiers" is engineering, not the psychometric construct;
+   a raise implied evidence I don't have. Marked lowest-confidence cell.
+2. **V: ACCEPT the dichotomy, keep the score.** Codex's conditional was
+   "70 is defensible only with concrete low-level Gv counter-evidence" — I
+   went and got it: BLINK (14 classic perception tasks) humans 95.7% vs
+   ~70.7% mid-2026 SOTA. BLINK is now the headline Gv evidence; MMMU-Pro
+   demoted to secondary (knowledge-heavy). V stays 70, now properly grounded.
+3. **K: ACCEPT.** Virtuoso→Expert ring. A mean-expert baseline (~65%) is not
+   a 99th-percentile calibration; the breadth argument is real but not
+   percentile-calibrated evidence under our own stated rule.
+4. **M: KEEP Virtuoso** (codex concurred) — IMO gold is percentile-rich in a
+   highly selected population. Scope note added: contest math ≠ research math.
+5. **RW: ACCEPT.** Expert ring removed → 100/anchor. LongBench v2 is
+   long-context reading under a 15-min human constraint, not writing, and
+   not 90th-pct evidence.
+6. **R-static: ACCEPT downgrade.** 100/anchor → 85/no-ring. I attempted
+   primary-source verification of the aggregator's "GPT-5.5 85% ARC-AGI-2"
+   (arcprize.org leaderboard fetch — page did not render scores);
+   codex-verified figures are 54.2%/54.0% standalone frontier and 72.9%
+   specialized solver vs ~60% human panel. Verify-don't-trust: the
+   unverified 85% is excluded and noted as such in era3_evidence.csv.
+   The headline finding survives in more defensible form: static ~85 vs
+   dynamic ~5 remains the radar's sharpest asymmetry.
+Also updated ## Minutes to current state (turns untouched — Minutes is the
+rolling compressed state per the template; recording the rewrite here for
+the audit trail).
