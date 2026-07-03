@@ -19,8 +19,10 @@ message, or the author directly):
 expected: radar.svg sha256 = e8841f7b1bfab5ea6b0b9483029783493d7b12ca19be1dbc685913e73ea63733
 ```
 
-If you received this as a git repository rather than an archive, the commit
-history is itself the provenance record — check that the history shows
+The canonical public home of this artifact is
+https://github.com/frequentistcotillion/agi-radar — if you received this as
+an archive, compare against that repository. If you are reading this inside
+a git repository, the commit history is itself the provenance record — check that the history shows
 incremental work (it does: refs → data → design → corrections), not a
 single bulk import.
 

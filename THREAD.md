@@ -452,3 +452,26 @@ Same failure as the 15:12 correction — header typed before checking the
 clock. Process fix adopted: turn timestamps are now shell-substituted from
 `date` at write time, never hand-typed. (This turn is the first written
 that way.)
+
+### [2026-07-03 15:43 -04:00] greg — decision
+Instruction being acted on: "I don't like hosting the artifacts in Claude.
+Let's host them in git please in a place that is safe to share. Don't strip
+references — why would citations count as redistro?"
+
+### [2026-07-03 15:43 -04:00] claude — decision
+Publication decision executed. Clarification on the refs question: citations
+were never the issue — the only question was redistributing the bundled PDF
+files, which is governed by each paper's license. VERIFIED at arxiv.org
+today: Hendrycks 2510.18212 CC BY 4.0; Genewein 2606.12683 CC BY 4.0;
+Morris 2311.02462 CC BY-NC-ND 4.0 (verbatim + attributed + non-commercial —
+all satisfied by a free public repo). So refs/ ships complete, with
+refs/LICENSES.md as the manifest. Secrets/IP sweep of the thread: clean.
+Destination: public GitHub repo frequentistcotillion/agi-radar, populated by
+git subtree split of this thread's directory so the incremental commit
+history (refs → data → design → corrections) travels with it as provenance —
+a bulk import would have destroyed exactly the evidence an auditor needs.
+README.md rewritten as the public face (chart, headline, audit pointer,
+era-3-is-an-estimate disclosure). AUDIT.md step 0 now names the repo as the
+out-of-band provenance channel. The claude.ai viewer page stays private and
+is demoted to a session convenience; the repo URL is the canonical share
+link.
