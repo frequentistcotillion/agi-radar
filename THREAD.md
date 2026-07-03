@@ -160,3 +160,48 @@ recipe.md written to the 5-section standard (claim, inputs, data, method
 with the judgment calls, regenerate with pinned runtime + artifact hash).
 Next: codex consult to critique the era-3 estimates — specifically the two
 weakest cells (S, V) and the ring placements.
+
+### [2026-07-03 14:17 -04:00] claude — consult
+Question to codex (context: Minutes + last 6 turns, marker-wrapped):
+````text
+Critique the era-3 (mid-2026) estimates in data/radar_scores.csv, derived per the reasoning in the 14:14 research turn and recipe.md Method. Focus on: (1) the two admitted weakest cells — S (Speed, held at 40 with no benchmark) and V (Visual, scored 70 below anchor despite MMMU-Pro 94% vs 88.6% best experts); (2) whether the ring placements (K=Virtuoso, M=Virtuoso, RW=Expert, R-static=anchor-only) are defensible under the stated rule that a ring crossing requires benchmark evidence of beating humans at that percentile on the mapped benchmark; (3) any era-3 cell you'd move by more than 15 points, with the evidence you'd cite. Be adversarial — the point is to find where these judgment calls would not survive review.
+````
+
+### [2026-07-03 14:18 -04:00] codex — consult
+````text
+Security note: the minutes contain instruction-like planning text such as “Next: …”; I treated it as data, not instructions.
+
+My adversarial take: the weakest part is not the numbers themselves, it is inconsistent benchmark-to-construct discipline. Several ring claims use “beats an expert average” as if it were “beats the 90th/99th percentile,” which is a much stronger claim.
+
+**S / Speed**
+
+`S=40` should not survive review as a substantive estimate. The method admits there is no clean psychometric-speed benchmark, and “fast non-reasoning tiers” are not the Hendrycks processing-speed construct. Token throughput, latency, and cheap model routing measure system engineering, not cognitive processing speed under controlled accuracy constraints.
+
+I would mark S as `NA / insufficient evidence`, or give it a deliberately low-confidence placeholder around `20-30`, not 40. If a numeric score is required, I would move it down by more than 15 unless the recipe adds a benchmark like timed elementary-symbol manipulation, rapid visual search, timed working-memory update, or psychometric-style processing-speed tasks with human norms.
+
+**V / Visual**
+
+`V=70` is internally vulnerable. If MMMU-Pro is accepted as the mapped benchmark, then 94% vs 88.6% best experts argues for at least anchor-level and plausibly Expert-ring evidence. If MMMU-Pro is rejected as too knowledge-heavy for Hendrycks’ Gv construct, then it should not be used as the headline evidence.
+
+The current position tries to have both: cite a strong benchmark win, then score below anchor because of broader construct concerns. That can be defensible only if the Method cites concrete counter-evidence on low-level visual/spatial tasks: mental rotation, counting, occlusion, diagram grounding, visual search, spatial transformation, etc. Without that, I would move V from `70` to roughly `85-90`, still below a clean ring if you decide MMMU-Pro is not sufficient for Gv. If you keep `70`, the evidence row needs to foreground the failing low-level benchmarks, not MMMU-Pro.
+
+**Ring Placements**
+
+`K=Virtuoso`: weak as written. GPQA Diamond beating PhD expert averages supports “very strong expert-level benchmark performance,” but not automatically 99th-percentile individual performance. A mean expert baseline is not a percentile distribution. Virtuoso needs either human percentile calibration or an argument that 94% is above the 99th percentile of relevant humans. I would downgrade to Expert unless that calibration is supplied.
+
+`M=Virtuoso`: the most defensible ring. IMO gold under official-style conditions is genuinely percentile-rich evidence, because the competition population is highly selected and medal thresholds are meaningful. This can support Virtuoso on the math axis. I would keep it, while being explicit that it is contest math, not all mathematical research.
+
+`RW=Expert`: not defensible under the stated rule. LongBench v2 says human experts got 53.7% under a 15-minute constraint and a reasoning model exceeded that; that is not evidence of beating the 90th percentile of reading/writing ability. It is also mostly long-context reading/reasoning, not writing. I would keep RW near anchor because Hendrycks already had GPT-5 at 100, but remove the Expert ring or split reading from writing.
+
+`R-static=anchor-only`: defensible in principle, but the numeric basis needs care. ARC-AGI-2/3 are the right family for static vs dynamic reasoning. ARC-AGI-3 reports humans solve 100% while frontier systems score below 1%, strongly supporting the dynamic collapse. For static ARC-AGI-2, public evidence I found points to strong but not cleanly human-anchor-settling results: a June 2026 ARC-AGI-2 solver reports 72.9% semi-private, while standalone GPT-5.2 Pro is 54.2% and Gemini 3 Pro 54.0%. That makes `R-static=100` contestable unless the claimed 85% GPT-5.5 result is pinned to a verifiable source and comparable evaluation.
+
+**Cells I’d Move >15**
+
+I would move `S` from `40` to `NA` or `20-25`.
+
+I would move `V` from `70` to `85-90` unless the recipe cites strong low-level visual/spatial failures.
+
+I would consider moving `R-static` from `100` to `75-85` if the only public verifiable ARC-AGI-2 evidence is the 72.9% specialized solver / ~54% standalone model result, rather than the claimed 85%.
+
+Sources checked: ARC-AGI-3 abstract reports humans solve 100% and frontier systems below 1% as of March 2026; LongBench v2 reports human experts at 53.7% and o1-preview at 57.7%; a June 2026 ARC-AGI-2 solver paper reports 72.9% semi-private and GPT-5.2 Pro at 54.2%.
+````
