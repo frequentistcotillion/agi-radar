@@ -17,7 +17,7 @@ from xml.sax.saxutils import escape
 RING_RADIAL = {"none": None, "anchor": 1.00, "expert": 1.25,
                "virtuoso": 1.50, "team": 1.75, "enterprise": 2.00}
 # rings drawn on the chart: (radial, label)
-RINGS = [(0.50, "Competent (50th pct)"),
+RINGS = [(0.50, "0.5 × anchor (coverage)"),
          (1.00, "Well-educated adult (~80th)"),
          (1.25, "Expert (90th)"),
          (1.50, "Virtuoso (99th)"),
@@ -128,8 +128,10 @@ def main():
         s.append(f'<text x="{lx + 20}" y="{ly + 12}" font-size="13" '
                  f'fill="#1a1a1a">{escape(label)}</text>')
     s.append('<text x="460" y="836" text-anchor="middle" font-size="11.5" fill="#555">'
-             'Rings above the anchor are ordinal thresholds (GDM performance levels; '
-             'collective rings from Genewein et al. 2026), not a linear scale.</text>')
+             'Scale: below the anchor, scores are the fraction of adult-anchor '
+             'sub-abilities attained (coverage), not a human percentile; above it, '
+             'rings are ordinal, evidence-gated thresholds (GDM levels; collective: '
+             'Genewein 2026).</text>')
     s.append('<text x="460" y="854" text-anchor="middle" font-size="11.5" fill="#555">'
              'Axes ordered by mid-2026 value, highest at 12 o’clock, clockwise. '
              'Note Reasoning (static) vs Reasoning (dynamic).</text>')

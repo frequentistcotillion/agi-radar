@@ -55,8 +55,27 @@ series is this thread's benchmark-mapped estimate, not a published score.
    plot verbatim. Above the anchor, GDM performance levels (Morris:
    Expert=90th pct, Virtuoso=99th) and Genewein collective levels (research
    team, enterprise) are ORDINAL rings at 1.25/1.50/1.75/2.00 — equal visual
-   spacing, explicitly not linear. Competent (50th) drawn at 0.5 as an
-   interior reference.
+   spacing, explicitly not linear.
+   **Scale honesty (added 2026-07-03 after recipient critique):** the scale
+   is dual-regime and the two regimes measure different things. BELOW the
+   anchor, a score is sub-ability COVERAGE relative to one reference point
+   (fraction of adult-anchor sub-abilities attained — e.g. Speed 30 = 3 of
+   10 speeded sub-abilities at adult level), NOT a placement in the human
+   percentile distribution. A model at 50 is not "median human." The
+   original 0.5 ring was labeled "Competent (50th pct)", which implied
+   percentile continuity below the anchor; that label is removed (now a
+   coverage gridline). True percentile comparability — what a reader
+   naturally wants — would require human norm distributions ON the mapped
+   benchmarks, which mostly do not exist publicly: available baselines are
+   point estimates (GPQA expert mean ~65%, ARC-AGI-2 panel mean ~60%,
+   MMMU expert range), not distributions. The only genuinely
+   percentile-rich evidence in this dataset is contest math (IMO medal
+   thresholds over a selected population). ABOVE the anchor, ring crossings
+   are therefore evidence-gated ordinal claims, not measured percentiles.
+   Closing this gap requires either administering normed psychometric
+   batteries to models (Hendrycks' approach, but scored against the full
+   norm distribution rather than one anchor) or collecting representative
+   human samples on the AI benchmarks. Neither is available to this thread.
 3. Ring placement rule: an era-3 axis crosses a ring only on benchmark
    evidence of beating humans at that percentile on the mapped benchmark.
    After adversarial codex consult (turns of 2026-07-03 14:18–14:20):
@@ -80,7 +99,18 @@ series is this thread's benchmark-mapped estimate, not a published score.
    (arXiv:2603.24621) measured GPT-5-era frontier systems at <1%, so
    R-dynamic is 0 / 5 / 5 across the eras. Corrected 2026-07-03 after the
    operator caught the conflation (decision turn 14:45).
-5. Rendering (`code/radar.py`, stdlib-only string assembly for byte
+5. **Collective rings are drawn but not yet operationalized (acknowledged
+   2026-07-03):** no axis can currently reach Research-team/Enterprise
+   because no benchmark operationalizes "exceeds a coordinated expert
+   team." Candidate crossing criteria, unresolved: (a) event-based — the
+   system solves problems that defeated funded expert teams (open
+   conjectures, validated novel therapeutics); (b) horizon-based — METR-
+   style task-completion horizons reaching team-scale effort (hundreds of
+   coordinated human-hours) by a single system instance; (c) the copies
+   baseline — N parallel instances ≈ N-person team — is a serviceable
+   lower bound but prices coordination at zero in both directions. Until
+   one is adopted, the top two rings are honest aspiration markers only.
+6. Rendering (`code/radar.py`, stdlib-only string assembly for byte
    stability): axes sorted by era-3 radial descending (tie-break: label),
    highest at 12 o'clock, clockwise — the spiral. Three translucent era
    polygons, anchor ring emphasized, ordinality footnoted on the chart.
@@ -93,7 +123,7 @@ series is this thread's benchmark-mapped estimate, not a published score.
 cd code
 rm -f ../radar.svg          # ensure a stale artifact can't mask a broken generator
 python3 radar.py            # reads ../data/radar_scores.csv, writes ../radar.svg
-sha256sum ../radar.svg      # 81feb3d9188a50bc23163997821c8f4ced42dee49b636c5513616097b0067c55
+sha256sum ../radar.svg      # ae8479c87ffba30717c89038558770ce30a027f981cbaa73059004506d981246
 ```
 Runtime: Python 3.12.3 (Ubuntu 24.04), stdlib only (csv, math, sys, xml.sax.saxutils). Output
 `radar.svg` is deterministic; the SHA-256 above is the pinned artifact hash.

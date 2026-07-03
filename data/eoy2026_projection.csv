@@ -18,3 +18,16 @@ S,30,30,25-40,"no construct-valid benchmark, no measured trend; flat"
 # mid-2026 ~65.5% -> EOY-2026 central ~70% (range ~66-75%).
 # Structural note: remaining mass is concentrated in MS + R-dynamic; without a
 # continual-learning breakthrough the composite asymptotes ~75-80%.
+# --- AMENDMENT 2026-07-03 (same day, after recipient critique; original rows above stand as made) ---
+# Critique: extrapolation may underprice (a) release compression (METR doubling 7mo->4.3mo means
+# H2-2026 contains more effective release cycles than H1), (b) early recursive self-improvement as a
+# third inflection beyond hardware+inference scaling, (c) the ARC-family base rate: predecessors
+# plateaued then collapsed super-linearly once targeted (ARC-AGI-1: years at ~0, then 0->87.5% in
+# months; ARC-AGI-2: 0->54/72.9 in ~18mo).
+# Ruling: base-rate argument accepted as legitimate upside risk not fully priced in the central.
+# R-dynamic alternate upside range: 5-35 (was 5-20) IF ARC-AGI-3 becomes a lab target in H2.
+# Central estimates deliberately NOT rewritten - January scoring will grade BOTH the original ranges
+# and the critique's directional claim (that misses will skew toward underestimation).
+# Added watch signal: AI-R&D acceleration (further METR doubling-time compression; credited
+# AI-authored research contributions) as the early-RSI indicator.
+

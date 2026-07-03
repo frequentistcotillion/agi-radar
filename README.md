@@ -5,9 +5,13 @@
 Three model eras — GPT-4 (2023), GPT-5 (2025), and the mid-2026 frontier —
 plotted across Hendrycks et al.'s ten CHC cognitive domains, with reasoning
 split into static vs dynamic. Radial scale: 100 = the "well-educated adult"
-anchor; rings above it are ordinal capability thresholds (GDM performance
-levels, then collective levels). Axes ordered by mid-2026 value, highest at
-12 o'clock.
+anchor. Below the anchor, scores measure sub-ability *coverage* against that
+single reference point — not placement in the human percentile distribution
+(the data to do percentiles properly doesn't publicly exist; see recipe.md
+Method 2). Above it, rings are ordinal, evidence-gated thresholds (GDM
+performance levels, then collective levels — the latter drawn but not yet
+reachable by any operationalized criterion). Axes ordered by mid-2026 value,
+highest at 12 o'clock.
 
 **The headline:** the capability profile is jagged. Mathematics and knowledge
 have burst through the human anchor (Virtuoso / Expert rings) while dynamic
@@ -28,7 +32,7 @@ Everything needed to verify this chart is in this repository:
   for auditing via your own AI agent.
 - **[recipe.md](recipe.md)** — claim, inputs, data, method (every judgment
   call disclosed), and exact regeneration commands. Pinned artifact hash:
-  `81feb3d9188a50bc23163997821c8f4ced42dee49b636c5513616097b0067c55`.
+  `ae8479c87ffba30717c89038558770ce30a027f981cbaa73059004506d981246`.
 - **[THREAD.md](THREAD.md)** — the complete append-only work log: sources
   verified at origin, an adversarial second-model review that moved four
   scores, two operator-caught errors and their on-the-record corrections.

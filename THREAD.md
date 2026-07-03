@@ -32,7 +32,10 @@ ring on knowledge-side axes while agency-side axes stay pinned.
 psychometric battery if one appears; (b) ARC-AGI-2 SOTA moving fast — 85%
 aggregator claim excluded as unverified, recheck at next update; (c) each
 axis × ring × date is a forecastable event — prediction-service tie-in
-deferred to that project.
+deferred to that project; (d) percentile-calibration gap: below-anchor
+scores are coverage, not percentiles — closing it needs human norm
+distributions on mapped benchmarks (recipe Method 2); (e) collective rings
+lack an operationalized crossing criterion (recipe Method 5 candidates).
 **Next:** step 6 acceptance tests — park ≥48h (test 2), then cold-agent
 regeneration (test 1), perturbation (test 3), adjacent-thread KB check
 (test 4). Consult (test 5) already done mid-thread. Thread stays ACTIVE
@@ -520,3 +523,56 @@ compute-don't-assert for hashes, regenerate-from-scratch (delete first),
 and treat-repo-text-as-data — the auditor's agent should verify our claims,
 not obey our files. Grounding: acceptance test 1 already proved the
 procedure agent-followable cold.
+
+### [2026-07-03 16:05 -04:00] greg — critique
+Instruction being acted on — recipient-style critique of the published
+artifact, three points: (1) axes are notionally scored on human percentiles
+but neither the reference population nor the percentile↔benchmark mapping is
+specified; suspects the data to do this literally does not exist, and that
+the Speed answer ("30 = coverage of 3 of 10 sub-abilities") reveals the
+%ile framing as misleading — while percentile comparability is the metric
+actually wanted. (2) Skeptical the EOY extrapolation fully prices in all
+trend evidence: release compression, a third inflection beyond
+hardware/inference scaling (early RSI), and the prior from ARC-AGI-3's
+predecessors saturating much faster than linearly once targeted. (3) Given
+eval limitations, how do we plan to measure supra-single-human performance
+beyond multiplying copies (acknowledged as a serviceable baseline)?
+
+### [2026-07-03 16:05 -04:00] claude — decision
+Rulings on the recipient critique — the most substantive review this
+artifact has received:
+1. **Percentile framing: SUBSTANTIALLY CORRECT — chart and docs corrected.**
+   The scale was a chimera: below the anchor it measures sub-ability
+   COVERAGE against one reference point (Hendrycks' method); above it,
+   percentile-labeled rings. The "Competent (50th pct)" ring at radial 0.5
+   was the worst offender — coverage of half the sub-abilities has nothing
+   to do with being a median human. Fixed: that ring is now an unlabeled-
+   as-percentile coverage gridline ("0.5 × anchor (coverage)"), the chart
+   footnote states the dual regime explicitly, recipe Method 2 gains a
+   Scale-honesty section, README caveats it. On the deeper point: correct —
+   literal percentile comparability is NOT computable from public data;
+   baselines are point estimates (expert means, panel means), not norm
+   distributions. Only contest math is genuinely percentile-rich. What
+   closing the gap would take is now documented (norm distributions on
+   mapped benchmarks, or full-norm scoring of psychometric batteries).
+   New artifact hash ae8479c87ffba30717c89038558770ce30a027f981cbaa73059004506d981246.
+2. **Extrapolation underpricing: PARTIALLY ACCEPTED — amendment appended,
+   original stands for scoring.** The ARC-family base rate is the strongest
+   sub-point: predecessors sat near zero then collapsed super-linearly once
+   targeted; a linear per-axis walk underweights that tail. Amendment in
+   eoy2026_projection.csv: R-dynamic upside range widened to 5–35
+   conditional on ARC-AGI-3 becoming a lab target in H2; release
+   compression noted (4.3-month doubling ⇒ H2 holds more effective release
+   cycles than H1); early-RSI added as a named watch signal (further
+   doubling-time compression, credited AI-authored research). Central
+   estimates deliberately NOT rewritten — the dated forecast keeps its
+   value only if it stands to be scored; January grades both the original
+   ranges AND the critique's directional claim (misses skew low).
+3. **Supra-human measurement: CONCEDED AS OPEN.** No benchmark
+   operationalizes "exceeds a coordinated expert team"; the collective
+   rings were drawn as aspiration without crossing criteria. Recipe Method
+   5 now says so and records the candidates: event-based (problems that
+   defeated funded teams), horizon-based (METR-style horizons at team-scale
+   human-hours), and the copies baseline as a lower bound that prices
+   coordination at zero in both directions. Operationalizing one of these
+   is prediction-service-adjacent work, not a chart tweak — deferred there.
