@@ -599,3 +599,9 @@ for v0.2: this file is deliberately narrative — the workshop now has a
 three-register document stack (notebook for humans / recipe+audit for
 verification / thread for the full record) worth making a template-level
 standard for published artifacts.
+
+### [2026-07-03 16:11 -04:00] claude — admin
+Typo correction: the previous turn contains a stray non-English token —
+"'disagree with a number?'路径" should read "'disagree with a number?'
+path." Generation slip, content otherwise unaffected; left in place per
+turn-immutability.
