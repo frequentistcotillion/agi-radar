@@ -390,3 +390,32 @@ agency" axis — or an explicit companion metric outside the CHC frame — is
 the candidate fix; folding it INTO R-dynamic would blur the construct the
 lost artifact's key finding depends on. Greg's skepticism was the right
 instinct: the axis stands, but only after its scope got precise.
+
+### [2026-07-03 15:21 -04:00] greg — admin
+Instruction being acted on: "back to workshop; proceed" — run the step-6
+acceptance tests that don't require the 48h park (tests 1 and 3; test 2
+waits for ≥2026-07-05 ~14:20 ET, test 4 rides along at close-out).
+
+### [2026-07-03 15:21 -04:00] claude — research
+**Acceptance test 1 (reproducibility): PASS.** A cold subagent (fresh
+context, given ONLY the thread directory path) copied the thread to a
+sandbox, followed recipe.md's Regenerate block, deleted the existing SVG to
+force from-scratch generation, and got sha256 e8841f7b…3733 — byte-identical
+to the pinned hash and the checked-in artifact. It also verified
+refs/SHA256SUMS (all 3 PDFs pass) and re-derived the artifact's central
+claim accurately from the directory contents alone (jagged profile,
+static≈85 vs dynamic≈5, MS bottleneck, era-3 = our estimate). Two doc gaps
+it flagged are now fixed in recipe.md: explicit `rm -f` before regeneration
+(stale artifact can't mask a broken generator) and an explicit
+work-from-thread-root note.
+**Acceptance test 3 (updateability): PASS.** In a sandbox copy, perturbed
+one score (MS 10→20 in data/radar_scores.csv), regenerated: new hash
+4f00f73a…43fd, deterministic (two runs identical), 11 axes intact, original
+thread untouched. The dated-new-version workflow (edit data → regen →
+update recipe hash → log turn → commit) is the same one already exercised
+in production by the 14:45 R-dynamic correction (e8841f7b replaced f3360b8e
+with full audit trail), so test 3's workflow requirement is demonstrated
+both in sandbox and in anger.
+**Status: tests 1 ✓, 3 ✓, 5 ✓ (14:18 consult). Remaining: test 2 (cold
+resume after ≥48h park — valid from 2026-07-05 ~14:20 ET) and test 4 (KB
+compounding — at close-out). v0.1 ships when 2 passes.**

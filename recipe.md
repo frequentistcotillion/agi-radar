@@ -89,7 +89,9 @@ series is this thread's benchmark-mapped estimate, not a published score.
 
 ## Regenerate
 ```
+# from the thread root (this directory)
 cd code
+rm -f ../radar.svg          # ensure a stale artifact can't mask a broken generator
 python3 radar.py            # reads ../data/radar_scores.csv, writes ../radar.svg
 sha256sum ../radar.svg      # e8841f7b1bfab5ea6b0b9483029783493d7b12ca19be1dbc685913e73ea63733
 ```
