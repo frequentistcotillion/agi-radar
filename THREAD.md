@@ -419,3 +419,9 @@ both in sandbox and in anger.
 **Status: tests 1 ✓, 3 ✓, 5 ✓ (14:18 consult). Remaining: test 2 (cold
 resume after ≥48h park — valid from 2026-07-05 ~14:20 ET) and test 4 (KB
 compounding — at close-out). v0.1 ships when 2 passes.**
+
+### [2026-07-03 15:13 -04:00] claude — admin
+Timestamp correction: the two preceding turn headers say 15:21; the VPS
+clock at write time was 15:12 (I typed the header before checking `date`).
+Content unaffected. Recorded as a correction turn per turn-immutability
+rather than editing the headers.
