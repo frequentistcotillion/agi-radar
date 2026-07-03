@@ -425,3 +425,23 @@ Timestamp correction: the two preceding turn headers say 15:21; the VPS
 clock at write time was 15:12 (I typed the header before checking `date`).
 Content unaffected. Recorded as a correction turn per turn-immutability
 rather than editing the headers.
+
+### [2026-07-03 15:29 -04:00] greg — admin
+Instruction being acted on: "how do I share the radar artifact in such a way
+that a third party human can do the same audit?"
+
+### [2026-07-03 15:29 -04:00] claude — draft
+Added AUDIT.md — a third-party human audit procedure shipping WITH the
+thread, so the artifact carries its own verification instructions. Design
+choices: (1) step 0 is out-of-band provenance — in-bundle hashes only prove
+internal consistency, so the expected artifact hash must come from an
+independent channel (git history or author); (2) the refs check has a
+zero-trust variant (re-download from arXiv by pinned ID, compare to
+SHA256SUMS) which also sidesteps any PDF-redistribution question for public
+sharing; (3) the procedure mirrors what the cold agent actually did in
+acceptance test 1, plus the human-judgment layer (step 5: audit the
+disclosed judgment calls, not just the arithmetic); (4) explicit statement
+of what a passing audit does NOT establish (that era-3 estimates are
+correct) — the honest scope of reproducibility. Share mechanics (bundle
+tarball to exports/, or public mirror repo) handled outside the thread;
+exports/ is gitignored by design.
