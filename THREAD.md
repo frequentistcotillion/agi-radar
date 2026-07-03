@@ -355,3 +355,38 @@ the reaction-time subtests, not because models "think faster";
 but-fragile: a scored real-time multimodal system could jump several
 sub-abilities at once. Noted in the projection's risk register here rather
 than changing the CSV — the forecast stands as made, dated 14:49.
+
+### [2026-07-03 14:59 -04:00] greg — critique
+Instruction being acted on: "tell me more about evals for dynamic reasoning
+beyond ARC-AGI-3. I am skeptical of 1 eval carrying a whole axis."
+
+### [2026-07-03 14:59 -04:00] claude — research
+Triangulation of the R-dynamic axis beyond ARC-AGI-3 (evidence rows added to
+data/era3_evidence.csv). The eval landscape splits into three families:
+1. **Novel-environment skill acquisition (the construct our axis targets):**
+   BALROG (six game envs) — composite ~58% (Gemini 3 Pro family) but the
+   composite flatters: it includes prior-rich envs (BabyAI, TextWorld,
+   Crafter). The novel/sparse slice is the signal: NetHack 6.8%, MiniHack
+   40%, and ARC-AGI-3 <1%. GVGAI-LLM (procedurally infinite games) and
+   BabaIsAI (rule-discovery/manipulation) sit in the same family with
+   similarly weak frontier results. Humans make deep progress on all of
+   these unaided. Triangulated: the ~5 score SURVIVES — three independent
+   eval families agree the novel-environment construct is pinned near floor.
+2. **Learning-during-use:** MemoryBench / Continual-Learning-Bench — SOTA
+   "far from satisfying" (authors, 2026-06). Consistent with family 1 and
+   with the MS≈10 axis; same underlying missing capability.
+3. **Long-horizon agentic execution in PRIOR-RICH domains — adjacent
+   construct, deliberately NOT in this axis:** METR 50% time horizon is
+   ≥16h for Claude Mythos (2026-05-09; 80% horizon ~3h), doubling every
+   ~4.3 months post-2023. This is dynamic-looking capability that is HIGH
+   and rising fast — but it runs on dense priors (software ecosystems,
+   docs, tooling) rather than on-the-fly acquisition of novel structure.
+DECISION IMPLIED: keep R-dynamic = 5 with scope = novel-environment skill
+acquisition; the axis is now carried by three eval families, not one.
+DESIGN TENSION LOGGED FOR v0.2: the radar currently has no axis where METR-
+style long-horizon agentic execution shows up, yet that is exactly where
+near-term real-world capability (and risk) concentrates. A "familiar-domain
+agency" axis — or an explicit companion metric outside the CHC frame — is
+the candidate fix; folding it INTO R-dynamic would blur the construct the
+lost artifact's key finding depends on. Greg's skepticism was the right
+instinct: the axis stands, but only after its scope got precise.

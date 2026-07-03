@@ -46,6 +46,11 @@ series is this thread's benchmark-mapped estimate, not a published score.
    (11 axes). Rationale (THREAD.md decision turn 2026-07-03 14:10): the
    static/dynamic gap is the most decision-relevant finding and averaging
    hides it; no other domain has an equally clean public decomposition.
+   R-dynamic scope (sharpened 14:59): novel-environment skill acquisition,
+   triangulated across three eval families (ARC-AGI-3, BALROG novel-env
+   slice, continual-learning benches) — explicitly NOT long-horizon agentic
+   execution in prior-rich domains (METR time horizons), which is high,
+   rising fast, and outside this axis by design.
 2. Radial scale: 1.0 = Hendrycks' well-educated-adult anchor, so eras 1–2
    plot verbatim. Above the anchor, GDM performance levels (Morris:
    Expert=90th pct, Virtuoso=99th) and Genewein collective levels (research
