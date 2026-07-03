@@ -576,3 +576,26 @@ artifact has received:
    human-hours), and the copies baseline as a lower bound that prices
    coordination at zero in both directions. Operationalizing one of these
    is prediction-service-adjacent work, not a chart tweak — deferred there.
+
+### [2026-07-03 16:11 -04:00] greg — critique
+Instruction being acted on: "the audit machinery is very LLM-facing, but a
+human can't casually inspect how we defined the contents of the chart (such
+as the mapping between axes and evals). Can we add a page that is closer to
+a lab notebook / summary of what this is and how we built it conceptually?"
+
+### [2026-07-03 16:11 -04:00] claude — draft
+Added NOTEBOOK.md — the human-facing conceptual layer — and linked it first
+in the README's file list ("start here if you're human"). Diagnosis
+accepted: the repo had a verification layer (AUDIT.md), a regeneration
+layer (recipe.md), and a raw log (THREAD.md), but no explanation layer; the
+axis→eval mapping in particular was only recoverable by cross-reading
+recipe Method against the evidence CSV. NOTEBOOK.md centers that mapping as
+a plain-language table (axis / plain-terms meaning / mid-2026 evidence /
+reading, with the review-driven downgrades noted inline), explains the
+dual-regime scale honestly, tells the one-day build story including both
+operator catches and the recipient critique, and ends with the
+known-weaknesses list and a "disagree with a number?"路径. Register note
+for v0.2: this file is deliberately narrative — the workshop now has a
+three-register document stack (notebook for humans / recipe+audit for
+verification / thread for the full record) worth making a template-level
+standard for published artifacts.

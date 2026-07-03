@@ -27,6 +27,9 @@ adversarially reviewed, and offered for scrutiny.
 
 Everything needed to verify this chart is in this repository:
 
+- **[NOTEBOOK.md](NOTEBOOK.md)** — start here if you're human: the lab
+  notebook. What the chart means, how each axis maps to an evaluation, how
+  it was built, and its known weaknesses — in plain language.
 - **[AUDIT.md](AUDIT.md)** — the third-party verification procedure (5 steps,
   ~10 minutes, needs only Python ≥3.11 stdlib). Includes a copy-paste prompt
   for auditing via your own AI agent.
