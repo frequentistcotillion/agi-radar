@@ -97,3 +97,51 @@ recipe's Method section has its rationale):
    ordered by the LATEST era's scores — matches the fixture-radar convention
    and the lost artifact.
 Next: per-axis benchmark mapping + era-3 SOTA collection into data/.
+
+### [2026-07-03 14:14 -04:00] claude — research
+Era-3 (Mythos-class, mid-2026) evidence collected per axis → data/era3_evidence.csv;
+derived series → data/radar_scores.csv. Headline evidence and the reasoning
+behind each estimate (0–100 = anchor scale; rings only where benchmark-evidenced):
+- **K = 100/Virtuoso.** GPQA Diamond ~94% (Gemini 3.1 Pro; Opus 4.7/4.8 and
+  GPT-5.2 within 2pts) vs ~65% for PhD domain experts — and breadth across all
+  domains simultaneously, which no individual human has. Virtuoso (99th pct),
+  not team-level: knowledge breadth ≠ producing new knowledge.
+- **M = 100/Virtuoso.** IMO gold 2025 (Gemini Deep Think 35/42, official
+  conditions) ≈ 99.99th-pct individual performance; FrontierMath T1–3 >40%
+  (early 2026), AIME saturated. Not Team ring: FrontierMath is still <50% and
+  open-problem output remains sporadic.
+- **RW = 100/Expert.** LongBench v2 64.4% (Opus 4.5, 2026-06-18) vs 53.7%
+  time-constrained human experts; era-2 already hit the anchor (Hendrycks
+  RW=10/10). Expert, not Virtuoso — long-form authorship quality vs the best
+  human writers is still contested and I found no clean benchmark win there.
+- **R-static = 100/anchor.** ARC-AGI-2 85% (GPT-5.5, 2026-06-18) vs ~60%
+  human-panel average — above the typical human on exactly the fixed-puzzle
+  fluid-reasoning family that stumped GPT-4 (~0%). THE PRESERVED FINDING
+  HOLDS AND HAS SHARPENED:
+- **R-dynamic = 5, no ring.** ARC-AGI-3 (interactive: explore, acquire goals,
+  adapt) — ALL frontier systems <1% as of 2026-03 (arXiv:2603.24621) while
+  humans complete most games unaided. The static/dynamic split is now ~100 vs
+  ~5, the radar's single most decision-relevant asymmetry.
+- **WM = 60.** MRCR v2 8-needle at 512K–1M: 76% (Opus 4.6) / 74% (GPT-5.5) —
+  only two models reliably use 1M; RULER-style multi-hop shows 50–65%
+  effective window. Above era-2 (40) but attention fidelity still lossy.
+- **MS = 10.** Still the bottleneck: MemoryBench / Continual Learning Bench
+  authors (2026) call SOTA "far from satisfying." Small credit above
+  Hendrycks' 0: production persistent-memory features now exist and partially
+  work, but they are retrieval contortions, not weight-level accumulation.
+- **MR = 60.** Frontier hallucination on SimpleQA-family: 3–9%, roughly
+  halved by extended thinking (GPT-5.5 Pro 4.2%, Opus 4.7 5.1%) vs era-2 ~40
+  domain score. Improved precision, still below human confabulation floor.
+- **V = 70.** MMMU-Pro 94% (GPT-5.4 Pro) / 92.7% (Mythos 5, Fable 5) vs
+  76–88.6% human experts — but MMMU-Pro is knowledge-heavy; Hendrycks' Gv
+  (low-level perception: rotation, visual search, counting) still shows
+  failures, so the domain composite stays below anchor despite the benchmark
+  win. This axis has the widest benchmark-vs-construct gap; flag for consult.
+- **A = 80.** MMAU ~75.6% vs ~82% human accuracy; speech understanding
+  near-human, music/complex-scene reasoning behind.
+- **S = 40.** No clean public psychometric-speed benchmark; token throughput
+  is not Hendrycks' construct. Held near era-2 with small credit for fast
+  non-reasoning tiers. Weakest-evidenced cell in the table; flag for consult.
+Era 1–2 note: both R sub-axes carry the Hendrycks composite (0, 70) since no
+era-1/2 static/dynamic decomposition was published — the split is only
+evidenced in era 3. Documented in radar_scores.csv header.

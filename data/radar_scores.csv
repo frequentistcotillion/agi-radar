@@ -1,0 +1,18 @@
+# Radar input. Scale: 100 = well-educated-adult anchor (Hendrycks). Eras 1-2 from
+# Hendrycks Table 1 (data/hendrycks_table1.csv), x10 to domain scores. Era 3 = our
+# estimate from data/era3_evidence.csv; reasoning in THREAD.md decision turn 2026-07-03.
+# ring: ordinal placement above anchor (anchor=100 -> radial 1.0; expert 1.25; virtuoso 1.5;
+# team 1.75; enterprise 2.0). Axes with ring get radial from ring, not score.
+# R split: eras 1-2 carry the Hendrycks composite R on both sub-axes (split unevidenced then).
+axis,label,era1_gpt4,era2_gpt5,era3_score,era3_ring
+K,General Knowledge,80,90,100,virtuoso
+RW,Reading & Writing,60,100,100,expert
+M,Mathematics,40,100,100,virtuoso
+R-static,Reasoning (static),0,70,100,anchor
+R-dynamic,Reasoning (dynamic),0,70,5,none
+WM,Working Memory,20,40,60,none
+MS,LT Memory Storage,0,0,10,none
+MR,LT Memory Retrieval,40,40,60,none
+V,Visual Processing,0,40,70,none
+A,Auditory Processing,0,60,80,none
+S,Speed,30,30,40,none
