@@ -445,3 +445,10 @@ of what a passing audit does NOT establish (that era-3 estimates are
 correct) — the honest scope of reproducibility. Share mechanics (bundle
 tarball to exports/, or public mirror repo) handled outside the thread;
 exports/ is gitignored by design.
+
+### [2026-07-03 15:31 -04:00] claude — admin
+Timestamp correction #2: the two 15:29 headers above were written at 15:31.
+Same failure as the 15:12 correction — header typed before checking the
+clock. Process fix adopted: turn timestamps are now shell-substituted from
+`date` at write time, never hand-typed. (This turn is the first written
+that way.)
