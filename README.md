@@ -27,7 +27,7 @@ Everything needed to verify this chart is in this repository:
   ~10 minutes, needs only Python ≥3.11 stdlib).
 - **[recipe.md](recipe.md)** — claim, inputs, data, method (every judgment
   call disclosed), and exact regeneration commands. Pinned artifact hash:
-  `e8841f7b1bfab5ea6b0b9483029783493d7b12ca19be1dbc685913e73ea63733`.
+  `81feb3d9188a50bc23163997821c8f4ced42dee49b636c5513616097b0067c55`.
 - **[THREAD.md](THREAD.md)** — the complete append-only work log: sources
   verified at origin, an adversarial second-model review that moved four
   scores, two operator-caught errors and their on-the-record corrections.

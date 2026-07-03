@@ -16,7 +16,7 @@ channel independent of this bundle (the author's git history, a signed
 message, or the author directly):
 
 ```
-expected: radar.svg sha256 = e8841f7b1bfab5ea6b0b9483029783493d7b12ca19be1dbc685913e73ea63733
+expected: radar.svg sha256 = 81feb3d9188a50bc23163997821c8f4ced42dee49b636c5513616097b0067c55
 ```
 
 The canonical public home of this artifact is

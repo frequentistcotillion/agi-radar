@@ -24,7 +24,7 @@ adversarially reviewed by codex consult and revised (K Expert, M Virtuoso,
 RW anchor, R-static 85, R-dyn 5, A 80, V 70 via BLINK, WM/MR 60, S 30
 low-confidence, MS 10). Era-2 exception: R-dynamic = 5 (not the composite
 70) — ARC-AGI-3 measured GPT-5-era systems <1%; greg caught the original
-composite-carry conflation (14:45 turns). Artifact hash now e8841f7b…3733.
+composite-carry conflation (14:45 turns). Artifact hash now 81feb3d9…7c55 (post XML-escape fix).
 Headline: static-vs-dynamic reasoning ~85 vs ~5;
 long-term memory storage still ~10 — the jagged profile has burst the anchor
 ring on knowledge-side axes while agency-side axes stay pinned.
@@ -484,3 +484,23 @@ public raw URL and hashed it — e8841f7b…3733, exact match to the pinned
 artifact hash. The public repo is the canonical share link; the claude.ai
 viewer page remains private as a session convenience only. Local audit
 bundle in exports/ regenerated to match the published state.
+
+### [2026-07-03 15:47 -04:00] greg — critique
+Instruction being acted on: "won't open image" — GitHub file preview of
+radar.svg shows "Error rendering embedded code / Invalid image source."
+
+### [2026-07-03 15:47 -04:00] claude — decision
+Root cause found and fixed: radar.py wrote text content unescaped, so the
+"Reading & Writing" axis label emitted a bare ampersand — invalid XML.
+Standalone SVG is strict XML, so GitHub's renderer (and any browser opening
+the raw file) correctly rejects it; the claude.ai viewer never surfaced it
+because there the SVG was inline in HTML, where the lenient HTML parser
+tolerates a bare &. The fixture thread couldn't catch it either — its toy
+labels contain no XML-special characters. Fix: xml.sax.saxutils.escape() on
+all dynamic text content (axis/ring/legend labels). Verified:
+ElementTree.parse() passes (hard XML validation, now part of my regen
+habit), escaped label present, byte-stable across two runs. New pinned
+artifact hash 81feb3d9188a50bc23163997821c8f4ced42dee49b636c5513616097b0067c55
+updated in recipe.md, AUDIT.md, README.md. Lesson for the workshop: the
+byte-stability check proves determinism, not validity — an invalid file
+reproduces perfectly. Validity checks belong in the regeneration path.

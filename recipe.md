@@ -93,7 +93,7 @@ series is this thread's benchmark-mapped estimate, not a published score.
 cd code
 rm -f ../radar.svg          # ensure a stale artifact can't mask a broken generator
 python3 radar.py            # reads ../data/radar_scores.csv, writes ../radar.svg
-sha256sum ../radar.svg      # e8841f7b1bfab5ea6b0b9483029783493d7b12ca19be1dbc685913e73ea63733
+sha256sum ../radar.svg      # 81feb3d9188a50bc23163997821c8f4ced42dee49b636c5513616097b0067c55
 ```
 Runtime: Python 3.12.3 (Ubuntu 24.04), stdlib only (csv, math, sys). Output
 `radar.svg` is deterministic; the SHA-256 above is the pinned artifact hash.

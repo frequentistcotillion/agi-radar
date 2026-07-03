@@ -11,6 +11,7 @@ Usage: python3 radar.py [scores_csv] [out_svg]
 import csv
 import math
 import sys
+from xml.sax.saxutils import escape
 
 # radial value for each ordinal ring above the anchor
 RING_RADIAL = {"none": None, "anchor": 1.00, "expert": 1.25,
@@ -90,7 +91,7 @@ def main():
         ring_labels.append(
             f'<text x="{CX + 6:.2f}" y="{CY - r - 4:.2f}" font-size="10.5" '
             f'fill="{"#1a1a1a" if emph else "#777"}" stroke="white" '
-            f'stroke-width="3" paint-order="stroke">{label}</text>')
+            f'stroke-width="3" paint-order="stroke">{escape(label)}</text>')
 
     # spokes and axis labels
     for i, row in enumerate(rows):
@@ -104,7 +105,7 @@ def main():
         elif lx < CX - 12:
             anchor = "end"
         s.append(f'<text x="{lx:.2f}" y="{ly + 4:.2f}" text-anchor="{anchor}" '
-                 f'font-size="13" fill="#1a1a1a">{row["label"]}</text>')
+                 f'font-size="13" fill="#1a1a1a">{escape(row["label"])}</text>')
 
     # era polygons, oldest underneath
     for key, _label, color in ERAS:
@@ -125,7 +126,7 @@ def main():
         s.append(f'<rect x="{lx}" y="{ly}" width="14" height="14" fill="{color}" '
                  'fill-opacity="0.35" stroke-width="2" stroke="' + color + '"/>')
         s.append(f'<text x="{lx + 20}" y="{ly + 12}" font-size="13" '
-                 f'fill="#1a1a1a">{label}</text>')
+                 f'fill="#1a1a1a">{escape(label)}</text>')
     s.append('<text x="460" y="836" text-anchor="middle" font-size="11.5" fill="#555">'
              'Rings above the anchor are ordinal thresholds (GDM performance levels; '
              'collective rings from Genewein et al. 2026), not a linear scale.</text>')
