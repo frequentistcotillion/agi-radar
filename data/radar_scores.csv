@@ -3,13 +3,16 @@
 # estimate from data/era3_evidence.csv; reasoning in THREAD.md decision turn 2026-07-03.
 # ring: ordinal placement above anchor (anchor=100 -> radial 1.0; expert 1.25; virtuoso 1.5;
 # team 1.75; enterprise 2.0). Axes with ring get radial from ring, not score.
-# R split: eras 1-2 carry the Hendrycks composite R on both sub-axes (split unevidenced then).
+# R split: R-static carries the Hendrycks composite R for eras 1-2 (their battery -
+# deduction/induction/ToM/planning/WCST - is a static-instrument measure). R-dynamic does
+# NOT inherit it: ARC-AGI-3 (arXiv:2603.24621) measured GPT-5-era frontier systems at <1%,
+# so era 2 = 5 there. Corrected 2026-07-03 (operator caught composite-carry conflation).
 axis,label,era1_gpt4,era2_gpt5,era3_score,era3_ring
 K,General Knowledge,80,90,100,expert
 RW,Reading & Writing,60,100,100,anchor
 M,Mathematics,40,100,100,virtuoso
 R-static,Reasoning (static),0,70,85,none
-R-dynamic,Reasoning (dynamic),0,70,5,none
+R-dynamic,Reasoning (dynamic),0,5,5,none
 WM,Working Memory,20,40,60,none
 MS,LT Memory Storage,0,0,10,none
 MR,LT Memory Retrieval,40,40,60,none

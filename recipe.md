@@ -10,7 +10,9 @@ remaining far below the anchor on dynamic reasoning (~5/100, ARC-AGI-3),
 long-term memory storage (~10/100, the standing bottleneck), and materially
 below it on working memory, memory retrieval, visual, auditory, and speed. The capability profile is jagged and
 the static/dynamic reasoning split (~85 vs ~5) is its sharpest asymmetry.
-Era-1/2 series (GPT-4 27%, GPT-5 57%) are the paper's own scores; the era-3
+Era-1/2 series (GPT-4 27%, GPT-5 57%) are the paper's own scores — with one
+exception: era-2 Reasoning (dynamic) is 5, from ARC-AGI-3 measurements of
+GPT-5-era systems, NOT the paper's composite R (see Method 4). The era-3
 series is this thread's benchmark-mapped estimate, not a published score.
 
 ## Inputs
@@ -65,18 +67,26 @@ series is this thread's benchmark-mapped estimate, not a published score.
    95.7% vs ~70.7% SOTA — MMMU-Pro demoted to secondary as knowledge-heavy);
    S = 30, era-2 value carried unchanged (no benchmark, no evidence of
    change — lowest-confidence cell).
-4. Era-1/2 values for both R sub-axes carry the paper's composite R (0, 70)
-   — the decomposition is only evidenced in era 3.
+4. Era-1/2 values for R-static carry the paper's composite R (0, 70): the
+   Hendrycks R battery (deduction, induction, ToM, planning, WCST) is a
+   static-instrument measure. R-dynamic does NOT inherit the composite —
+   doing so (as this recipe's first version did) painted GPT-5-era dynamic
+   reasoning at 70 and made mid-2026 look like a regression. ARC-AGI-3
+   (arXiv:2603.24621) measured GPT-5-era frontier systems at <1%, so
+   R-dynamic is 0 / 5 / 5 across the eras. Corrected 2026-07-03 after the
+   operator caught the conflation (decision turn 14:45).
 5. Rendering (`code/radar.py`, stdlib-only string assembly for byte
    stability): axes sorted by era-3 radial descending (tie-break: label),
    highest at 12 o'clock, clockwise — the spiral. Three translucent era
    polygons, anchor ring emphasized, ordinality footnoted on the chart.
+   Ring labels (incl. Competent/50th) render above the polygons with a
+   white halo so the inner ones stay legible over the era fills.
 
 ## Regenerate
 ```
 cd code
 python3 radar.py            # reads ../data/radar_scores.csv, writes ../radar.svg
-sha256sum ../radar.svg      # f3360b8eb6d8b74be8e65652a365fcb2f59930f2dd4d6e7228b1283e9e64a5fc
+sha256sum ../radar.svg      # e8841f7b1bfab5ea6b0b9483029783493d7b12ca19be1dbc685913e73ea63733
 ```
 Runtime: Python 3.12.3 (Ubuntu 24.04), stdlib only (csv, math, sys). Output
 `radar.svg` is deterministic; the SHA-256 above is the pinned artifact hash.

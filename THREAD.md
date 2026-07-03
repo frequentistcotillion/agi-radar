@@ -22,7 +22,10 @@ ordinal above it. Series: era 1–2 = Hendrycks Table 1 verbatim (GPT-4 27%,
 GPT-5 57%); era 3 (Mythos-class, mid-2026) = our benchmark-mapped estimate,
 adversarially reviewed by codex consult and revised (K Expert, M Virtuoso,
 RW anchor, R-static 85, R-dyn 5, A 80, V 70 via BLINK, WM/MR 60, S 30
-low-confidence, MS 10). Headline: static-vs-dynamic reasoning ~85 vs ~5;
+low-confidence, MS 10). Era-2 exception: R-dynamic = 5 (not the composite
+70) — ARC-AGI-3 measured GPT-5-era systems <1%; greg caught the original
+composite-carry conflation (14:45 turns). Artifact hash now e8841f7b…3733.
+Headline: static-vs-dynamic reasoning ~85 vs ~5;
 long-term memory storage still ~10 — the jagged profile has burst the anchor
 ring on knowledge-side axes while agency-side axes stay pinned.
 **Open questions:** (a) S has no mapped benchmark — candidate: timed
@@ -257,3 +260,32 @@ recipe Claim/Method updated):
 Also updated ## Minutes to current state (turns untouched — Minutes is the
 rolling compressed state per the template; recording the rewrite here for
 the audit trail).
+
+### [2026-07-03 14:45 -04:00] greg — critique
+Instruction being acted on: "something smells off — note that we have GPT-5
+era significantly outperforming Mythos tier on dynamic reasoning. Perhaps
+this is from conflating ARC AGI versions? Note, we should also add the mark
+for 'competent'/50%ile just as for the others."
+
+### [2026-07-03 14:45 -04:00] claude — decision
+Greg's diagnosis is CORRECT and the fix is in. Root cause: my 14:14 design
+carried Hendrycks' composite R (GPT-5 = 70) onto BOTH R sub-axes for eras
+1–2. But the Hendrycks R battery (deduction, induction, theory-of-mind,
+planning, WCST adaptation) is a static-instrument measure — and the
+ARC-AGI-3 result (<1%, arXiv:2603.24621) was measured ON GPT-5-era frontier
+systems. So era-2 R-dynamic was never 70; the chart implied a mid-2026
+regression that never happened. Correction: R-dynamic = 0 / 5 / 5 across
+eras (radar_scores.csv header documents it; recipe Method 4 rewritten). The
+prior turns stand unedited per turn-immutability — this turn is the
+correction of record. Honest residual: with both R sub-axes now diverging
+from Table 1 in era 2, the "eras 1–2 verbatim" claim needed the exception
+noted in the recipe Claim, done.
+Second item: ring-label legibility. The Competent (50th) label WAS drawn but
+sat under three stacked translucent era fills. radar.py now emits all ring
+labels after the polygons with a white halo (paint-order=stroke), so
+Competent reads as clearly as the outer ring labels. If greg meant a
+different kind of mark (e.g. a tick on each spoke at the 50th ring), say so
+and I'll add that instead.
+Regenerated: new artifact hash
+e8841f7b1bfab5ea6b0b9483029783493d7b12ca19be1dbc685913e73ea63733
+(recipe Regenerate updated; byte-stability re-verified, two identical runs).

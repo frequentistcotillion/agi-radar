@@ -77,7 +77,9 @@ def main():
              'fill="#555">Eras 1–2: Hendrycks et al. Table 1 (arXiv:2510.18212). '
              'Era 3: workshop estimate from public benchmarks, 2026-07-03.</text>')
 
-    # rings (anchor ring emphasized)
+    # rings (anchor ring emphasized); labels are emitted AFTER the polygons so
+    # the inner ones (Competent, anchor) stay legible over the era fills
+    ring_labels = []
     for radial, label in RINGS:
         r = R_UNIT * radial
         emph = radial == 1.0
@@ -85,8 +87,10 @@ def main():
                  f'stroke="{"#333" if emph else "#cccccc"}" '
                  f'stroke-width="{1.6 if emph else 0.8}"'
                  f'{"" if emph else " stroke-dasharray=\"4 3\""}/>')
-        s.append(f'<text x="{CX + 6:.2f}" y="{CY - r - 4:.2f}" font-size="10.5" '
-                 f'fill="{"#1a1a1a" if emph else "#777"}">{label}</text>')
+        ring_labels.append(
+            f'<text x="{CX + 6:.2f}" y="{CY - r - 4:.2f}" font-size="10.5" '
+            f'fill="{"#1a1a1a" if emph else "#777"}" stroke="white" '
+            f'stroke-width="3" paint-order="stroke">{label}</text>')
 
     # spokes and axis labels
     for i, row in enumerate(rows):
@@ -110,6 +114,9 @@ def main():
         for i, row in enumerate(rows):
             x, y = xy(row[key], i, n)
             s.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r="3" fill="{color}"/>')
+
+    # ring labels above the polygons
+    s.extend(ring_labels)
 
     # legend
     ly = 790
