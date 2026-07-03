@@ -475,3 +475,12 @@ era-3-is-an-estimate disclosure). AUDIT.md step 0 now names the repo as the
 out-of-band provenance channel. The claude.ai viewer page stays private and
 is demoted to a session convenience; the repo URL is the canonical share
 link.
+
+### [2026-07-03 15:44 -04:00] claude — admin
+Publication confirmed live: https://github.com/frequentistcotillion/agi-radar
+(public, main = subtree split of this thread, 16 commits of incremental
+history). Independent verification performed: fetched radar.svg from the
+public raw URL and hashed it — e8841f7b…3733, exact match to the pinned
+artifact hash. The public repo is the canonical share link; the claude.ai
+viewer page remains private as a session convenience only. Local audit
+bundle in exports/ regenerated to match the published state.
