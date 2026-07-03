@@ -605,3 +605,29 @@ Typo correction: the previous turn contains a stray non-English token —
 "'disagree with a number?'路径" should read "'disagree with a number?'
 path." Generation slip, content otherwise unaffected; left in place per
 turn-immutability.
+
+### [2026-07-03 16:21 -04:00] greg — research
+Instruction being acted on: "where does 'chess puzzles' eval sit in our
+axes?"
+
+### [2026-07-03 16:21 -04:00] claude — research
+Axis-mapping ruling (precedent for future eval-placement questions):
+chess puzzles map to **R-static** — fully specified position, known rules,
+"solve the fixed puzzle" — and explicitly NOT R-dynamic (chess is the
+maximal-prior domain; our R-dynamic scope is novel-environment skill
+acquisition). Admissible only as SECONDARY evidence: the construct is
+blended (Chase & Simon chunking — expert chess skill loads on compiled
+pattern retrieval, i.e. MR, more than fluid calculation) and the domain is
+saturated in training data — same demotion logic as MMMU-Pro on V.
+Two distinctive properties recorded: (1) chess has genuine human norm
+distributions (Elo / puzzle ratings over millions of players) — one of the
+only domains where TRUE percentile placement is computable, directly
+relevant to the recipient critique's percentile-calibration gap; a
+rigorous LLM puzzle-rating eval would be a rare percentile-calibrated
+probe, albeit of a blended construct. (2) Historical LLM chess weakness
+relative to other R-static evals is an intra-axis jaggedness signal — if it
+persists at mid-2026, R-static may itself decompose (compiled-pattern-
+dependent vs pattern-free reasoning). Novel-RULE chess variants (not
+Chess960) would migrate toward R-dynamic — the BabaIsAI family in chess
+clothes. No chart change; ruling recorded for the mapping table's
+discipline.
