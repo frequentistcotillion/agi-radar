@@ -322,3 +322,36 @@ persistent weight-level learning. Each cell of the projection CSV is a
 forecastable question — first concrete seed for the prediction service.
 Caveats logged: 2–3 data points per axis; era-3 inputs are our own
 estimates; benchmark ≠ construct (S axis is the cautionary example).
+
+### [2026-07-03 14:55 -04:00] greg — critique
+Instruction being acted on: "what does 'speed' even mean if there are no
+benchmarks?"
+
+### [2026-07-03 14:55 -04:00] claude — research
+Construct clarification for the S axis, from the paper itself (appendix J of
+arXiv:2510.18212v3 — extracted from the pinned source, not memory). Speed
+(CHC Gs) = "the ability to perform simple cognitive tasks quickly —
+perceptual speed, reaction times, processing fluency." The paper decomposes
+it into TEN sub-abilities at 1% of the AGI score each: perceptual
+speed–search, perceptual speed–compare, reading speed, writing speed, number
+facility, simple reaction time, choice reaction time, inspection time,
+comparison speed, movement/pointer fluency. Testing methodology is concrete:
+"the AI's performance (latency or throughput) is compared against the
+average performance of a well-educated adult on the same tasks" (e.g. input
+token throughput = reading speed; output throughput = writing speed).
+Why GPT-4/GPT-5 scored 3/10: "both can read and write and compute simple
+expressions quickly, but their other multimodal processing speed
+capabilities are nonexistent or slow" — they pass the three text-side
+sub-abilities (where they are in fact wildly SUPERhuman, but each sub-ability
+caps at 1 point) and fail the seven that need real-time visual/auditory
+perception (reaction time, inspection time, etc.).
+CORRECTION to my earlier framing: "no clean public benchmark" overstated it —
+the construct is well-defined and measurable; what does not exist is a
+public leaderboard, hence no third-party TREND data. Two consequences:
+(1) S is really a modality-coverage axis, not a cognition-speed axis — it
+will move when low-latency streaming voice/video systems get scored against
+the reaction-time subtests, not because models "think faster";
+(2) my flat EOY projection (30, range 25–40) is therefore conservative-
+but-fragile: a scored real-time multimodal system could jump several
+sub-abilities at once. Noted in the projection's risk register here rather
+than changing the CSV — the forecast stands as made, dated 14:49.
