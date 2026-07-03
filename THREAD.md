@@ -289,3 +289,36 @@ and I'll add that instead.
 Regenerated: new artifact hash
 e8841f7b1bfab5ea6b0b9483029783493d7b12ca19be1dbc685913e73ea63733
 (recipe Regenerate updated; byte-stability re-verified, two identical runs).
+
+### [2026-07-03 14:49 -04:00] greg — research
+Instruction being acted on: "better! what's our best extrapolation of where
+capabilities might be by end of year 2026 if current trends continue?"
+
+### [2026-07-03 14:49 -04:00] claude — research
+EOY-2026 extrapolation logged as a dated, scoreable forecast →
+data/eoy2026_projection.csv (central + 80% ranges per axis). Method: per-axis
+trend continuation from the 2023/2025/mid-2026 series, moderated by (a) how
+fast each axis's mapped benchmark historically fell once labs targeted it
+(ARC-AGI-1 precedent for R-static), and (b) whether the axis has a gradient
+to climb at all (MS and R-dynamic don't — no shipped weight-level continual
+learning; ARC-AGI-3 shares the learning-during-use bottleneck).
+Headline numbers: composite ~65.5% (mid-2026, our estimate, Hendrycks
+method) → ~70% central by 2026-12-31 (range 66–75). R-static likely reaches
+the anchor (ARC-AGI-2 standalone 65–75% vs 60% panel). V and A approach but
+don't cross anchor. MS 15 (10–25), R-dynamic 10 (5–20).
+STRUCTURAL CLAIM (the decision-relevant part): the composite's apparent
+deceleration (27→57 in ~29 months, then ~57→65.5 in ~11, projected +4.5 in
+6) is not slowing progress — it is bottleneck concentration. Everything
+benchmark-targetable is being saturated; the residual mass sits almost
+entirely in MS + R-dynamic, which share one unsolved capability
+(accumulating skill/knowledge during use). Corollary: composite trend lines
+extrapolated linearly to "AGI by 202X" mislead in BOTH directions — they
+overstate near-term generality (the last 25 points are qualitatively
+different) and understate jump risk (a continual-learning breakthrough
+unlocks both axes at once; that is the nonlinear scenario to watch, cf.
+Genewein et al.'s pathways). Watch signals: MemoryBench/CL-Bench SOTA
+movement, ARC-AGI-3 leaderboard first >5% agentic scores, any lab shipping
+persistent weight-level learning. Each cell of the projection CSV is a
+forecastable question — first concrete seed for the prediction service.
+Caveats logged: 2–3 data points per axis; era-3 inputs are our own
+estimates; benchmark ≠ construct (S axis is the cautionary example).

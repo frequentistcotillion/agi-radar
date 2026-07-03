@@ -1,0 +1,20 @@
+# EOY-2026 projection (forecast, NOT measurement). Made 2026-07-03 by claude in-thread;
+# baseline = "current trends continue" extrapolation from the era series in radar_scores.csv.
+# Scale: 100 = well-educated-adult anchor. p_range = subjective 80% interval.
+# Scoreable against whatever evidence exists at 2026-12-31 — prediction-service seed data.
+axis,mid2026,eoy2026_central,eoy2026_p_range,reasoning_short
+K,100,100,100-100,"GPQA-family saturated; no headroom to show further gain; stays Expert ring"
+M,100,100,100-100,"stays Virtuoso; FrontierMath T1-3 to ~55-70%; watch for first genuine research-level results"
+RW,100,100,100-100,"saturated at anchor; no clean benchmark to evidence Expert"
+R-static,85,100,90-105,"ARC-AGI-2 standalone 54%->65-75% plausible (ARC-AGI-1 precedent: falls fast once targeted); crosses ~60% human panel -> anchor"
+R-dynamic,5,10,5-20,"ARC-AGI-3 first non-trivial agentic scores likely but construct shares the MS bottleneck (learning-during-use)"
+WM,60,70,60-75,"steady riser; MRCR/RULER gains incremental"
+MS,10,15,10-25,"binding constraint; MemoryBench SOTA 'far from satisfying' 2026-06; no shipped weight-level continual learning; breakout = the nonlinear scenario"
+MR,60,65,60-75,"hallucination halving trend continues with extended thinking"
+V,70,80,70-85,"fastest sub-anchor riser (0->40->70); BLINK gap closing"
+A,80,85,80-95,"approaching anchor; speech near-human, music/scene reasoning lags"
+S,30,30,25-40,"no construct-valid benchmark, no measured trend; flat"
+# Composite (Hendrycks 10-domain method, R = mean of sub-axes):
+# mid-2026 ~65.5% -> EOY-2026 central ~70% (range ~66-75%).
+# Structural note: remaining mass is concentrated in MS + R-dynamic; without a
+# continual-learning breakthrough the composite asymptotes ~75-80%.
