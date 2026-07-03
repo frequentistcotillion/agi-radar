@@ -631,3 +631,35 @@ dependent vs pattern-free reasoning). Novel-RULE chess variants (not
 Chess960) would migrate toward R-dynamic — the BabaIsAI family in chess
 clothes. No chart change; ruling recorded for the mapping table's
 discipline.
+
+### [2026-07-03 16:25 -04:00] greg — research
+Instruction being acted on: "how about https://genstrat.org/ ?" — place the
+GENSTRAT eval in our axes.
+
+### [2026-07-03 16:25 -04:00] claude — research
+Axis-mapping ruling for GENSTRAT (arXiv:2605.23238, May 2026; Shadarevian,
+Ghods, Kenich, Kotawala): procedurally generated two-player zero-sum
+imperfect-information card games from a parametric family too large to
+memorize; agents receive ONLY a natural-language rulebook; metrics =
+tournament score + capability decomposition (state space, temporal depth,
+information sensitivity, opponent modeling, risk, brittleness) + a
+jaggedness/volatility measure. Nine models tested; GPT-5-class and Claude
+top-3 but with more local volatility than Gemini 3.1 Pro. NO human baseline.
+RULING: fits NEITHER reasoning axis — it defines the missing middle band.
+Not R-dynamic (rules are GIVEN; the discovery-by-acting bottleneck that
+pins R-dynamic at ~5 is deliberately removed). Not R-static as practiced
+(structure novel every round; adversarial; imperfect information; live
+opponent modeling). Taxonomy consequence, recorded for v0.2: the reasoning
+family is at least TRI-banded — (1) static-known (ARC-AGI-2, chess),
+(2) strategic-novel-given-rules (GENSTRAT), (3) dynamic-discovered-rules
+(ARC-AGI-3/NetHack). Models performing well at band 2 while failing band 3
+LOCALIZES the frontier deficit at rule-discovery-through-action, not
+novelty handling — sharpens the headline finding. Admissibility: currently
+NOT usable as an axis-carrier (no human baseline → no anchor placement
+under our scale rules); if normed, it is the natural headline for a band-2
+axis at v0.2. Side flag beyond the radar: GENSTRAT's exploitability metric
+(can deployed LLM agents be systematically gamed in market/auction
+settings) is strategy-platform-relevant independent of this chart — added
+to the watch list. v0.2 reasoning-family queue now: band-2 axis (GENSTRAT)
++ familiar-domain agency axis (METR) + possible R-static decomposition
+(chess/compiled-pattern probe).
