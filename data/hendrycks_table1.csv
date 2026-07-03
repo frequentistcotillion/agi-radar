@@ -1,0 +1,15 @@
+# Source: Hendrycks et al., "A Definition of AGI", arXiv:2510.18212v3, Table 1.
+# Verified against arxiv.org/html/2510.18212v3 on 2026-07-03 (local pinned PDF: refs/hendrycks-2025-a-definition-of-agi-2510.18212v3.pdf).
+# contrib = contribution to overall AGI score (each domain weighted 10%); domain_score_pct = contrib*10.
+domain,code,gpt4_contrib_pct,gpt5_contrib_pct,gpt4_domain_score_pct,gpt5_domain_score_pct
+General Knowledge,K,8,9,80,90
+Reading and Writing,RW,6,10,60,100
+Mathematical Ability,M,4,10,40,100
+On-the-Spot Reasoning,R,0,7,0,70
+Working Memory,WM,2,4,20,40
+Long-Term Memory Storage,MS,0,0,0,0
+Long-Term Memory Retrieval,MR,4,4,40,40
+Visual Processing,V,0,4,0,40
+Auditory Processing,A,0,6,0,60
+Speed,S,3,3,30,30
+# Totals: GPT-4 27%, GPT-5 57%.
