@@ -14,8 +14,9 @@ supersedes: null
 
 ## Minutes
 <!-- Rolling compressed state. A cold agent reads this first. Keep current. -->
-**State (2026-07-03):** AGI Radar rebuilt end-to-end; artifact `radar.svg`
-generated (deterministic, sha256 f3360b8e…4a5fc), recipe complete to the
+**State (2026-07-03; Minutes refreshed 2026-07-05):** AGI Radar rebuilt
+end-to-end; artifact `radar.svg` generated (deterministic; canonical sha256
+ae8479c8…1246 — matches recipe Regenerate + live radar.svg), recipe complete to the
 5-section standard. Design: 11 axes (Hendrycks ten CHC domains, R split
 static/dynamic), radial 1.0 = well-educated-adult anchor, GDM/Genewein rings
 ordinal above it. Series: era 1–2 = Hendrycks Table 1 verbatim (GPT-4 27%,
@@ -24,7 +25,9 @@ adversarially reviewed by codex consult and revised (K Expert, M Virtuoso,
 RW anchor, R-static 85, R-dyn 5, A 80, V 70 via BLINK, WM/MR 60, S 30
 low-confidence, MS 10). Era-2 exception: R-dynamic = 5 (not the composite
 70) — ARC-AGI-3 measured GPT-5-era systems <1%; greg caught the original
-composite-carry conflation (14:45 turns). Artifact hash now 81feb3d9…7c55 (post XML-escape fix).
+composite-carry conflation (14:45 turns). Artifact hash lineage:
+f3360b8e → e8841f7b (R-dyn fix) → 81feb3d9 (XML-escape fix) → **ae8479c8…1246**
+(percentile/scale-honesty fix — CANONICAL; earlier hashes superseded).
 Headline: static-vs-dynamic reasoning ~85 vs ~5;
 long-term memory storage still ~10 — the jagged profile has burst the anchor
 ring on knowledge-side axes while agency-side axes stay pinned.
@@ -36,10 +39,20 @@ deferred to that project; (d) percentile-calibration gap: below-anchor
 scores are coverage, not percentiles — closing it needs human norm
 distributions on mapped benchmarks (recipe Method 2); (e) collective rings
 lack an operationalized crossing criterion (recipe Method 5 candidates).
-**Next:** step 6 acceptance tests — park ≥48h (test 2), then cold-agent
-regeneration (test 1), perturbation (test 3), adjacent-thread KB check
-(test 4). Consult (test 5) already done mid-thread. Thread stays ACTIVE
-until tests run; do not close before the 48h park completes.
+**Published:** public repo github.com/frequentistcotillion/agi-radar (subtree
+split, full history). Refs retrofit 2026-07-05: source PDFs → text-only `.md`
+extracts in refs/, verbatim PDFs in refs/originals/ (NEVER read into context);
+regeneration unaffected (radar.py reads CSVs). Public mirror is STALE post-
+retrofit — re-split before next publish.
+**Next:** step 6 acceptance tests. PASSED: 1 reproducibility ✓, 3 updateability ✓,
+5 mid-thread consult ✓. Test 2 (cold resume): trial 2026-07-05 succeeded — a
+fresh agent reconstituted full state and stayed context-safe (never read
+refs/originals); formal scoring DEFERRED (operator call) because a refs-retrofit
+commit at 2026-07-05 11:23 arguably reset the ≥48h idle clock. Test 4 (KB
+compounding) runs at close-out. On Test-2/4 resolution → closeout.py → workshop
+v0.1. Thread stays ACTIVE; do not close before Tests 2 & 4 resolve. Housekeeping
+DUE: full archival compaction (41 raw turns > ~30 threshold; this pass refreshed
+Minutes only).
 
 ## Turns
 
@@ -677,3 +690,18 @@ provenance comment to the new paths. Radar regeneration is unaffected (radar.py
 reads data/ CSVs, not the PDFs; Test-1 hash unchanged). This makes the pilot
 safe to cold-resume (acceptance Test 2). Reproducibility hashing retained here
 (the PDFs were already hashed) though now optional per ADR-001.
+
+### [2026-07-05 16:27 -04:00] claude — compaction
+Minutes refresh only (NO turns archived this pass). Corrected stale artifact
+hashes: the Minutes cited f3360b8e (State line) and 81feb3d9 (later), both
+superseded — canonical is ae8479c8…1246 (verified against recipe.md Regenerate
+and a live `sha256sum radar.svg`). Rewrote the hash-lineage note, added a
+Published/refs-retrofit line, and replaced the Next block with current
+acceptance-test status (1/3/5 passed; Test 2 cold-resume trial 2026-07-05
+succeeded and was context-safe, but formal scoring deferred per operator — the
+11:23 refs-retrofit commit arguably reset the ≥48h idle clock; Test 4 at
+close-out). WHY: a cold-resume trial surfaced the stale Minutes as the one real
+dent in resumability (the cold agent stayed oriented via the immutable turn log,
+but Minutes are meant to be the fast path). Per AGENTS.md, Minutes may only be
+rewritten by a compaction turn — this is it. NOTE: a full archival compaction is
+now DUE (41 raw turns > ~30 threshold) and is deferred to a dedicated pass.
