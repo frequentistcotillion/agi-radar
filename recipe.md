@@ -18,13 +18,18 @@ series is this thread's benchmark-mapped estimate, not a published score.
 ## Inputs
 
 - Hendrycks, D. et al. (2025). *A Definition of AGI*. arXiv:2510.18212v3.
-  → `refs/hendrycks-2025-a-definition-of-agi-2510.18212v3.pdf`
+  → `refs/hendrycks-2025-a-definition-of-agi-2510.18212v3.md` (text extract;
+  source PDF at `refs/originals/`)
 - Morris, M. R. et al. (Google DeepMind, 2023). *Levels of AGI:
   Operationalizing Progress on the Path to AGI*. arXiv:2311.02462.
-  → `refs/morris-2023-levels-of-agi-2311.02462.pdf`
+  → `refs/morris-2023-levels-of-agi-2311.02462.md` (text extract; PDF at `refs/originals/`)
 - Genewein, T. et al. (Google DeepMind, 2026). *From AGI to ASI*.
-  arXiv:2606.12683v1. → `refs/genewein-2026-from-agi-to-asi-2606.12683v1.pdf`
-- All three retrieved 2026-07-03 from arxiv.org; SHA-256 in `refs/SHA256SUMS`.
+  arXiv:2606.12683v1. → `refs/genewein-2026-from-agi-to-asi-2606.12683v1.md`
+  (text extract; PDF at `refs/originals/`)
+- All three retrieved 2026-07-03 from arxiv.org; source PDFs preserved under
+  `refs/originals/` (never read into context — read the text extract), SHA-256
+  in `refs/SHA256SUMS`. Ingested to text-only extracts 2026-07-05 via
+  ingest_ref.py to keep them out of the context-window read path.
 - Era-3 benchmark scores: public leaderboards/reports retrieved 2026-07-03,
   itemized with sources in `data/era3_evidence.csv`.
 

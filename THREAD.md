@@ -663,3 +663,17 @@ settings) is strategy-platform-relevant independent of this chart — added
 to the watch list. v0.2 reasoning-family queue now: band-2 axis (GENSTRAT)
 + familiar-domain agency axis (METR) + possible R-static decomposition
 (chess/compiled-pattern probe).
+
+### [2026-07-05 11:23 -04:00] claude — admin
+Refs retrofit (ingest_ref.py, ADR-001). The three source PDFs — hendrycks
+(16.8 MB), morris, genewein — were a latent context-window landmine: reading
+one renders every figure into context and evaporates the window (the failure
+that made workshop unusable on the oaif-round-3 thread). Ran each through
+`tools/ingest_ref.py`: text-only `.md` extracts now live in `refs/` (149K/71K/
+222K chars, figures stripped), the verbatim PDFs moved to `refs/originals/`
+(preserved, SHA-256 verified, never read into context). Updated recipe.md
+Inputs, refs/LICENSES.md, refs/SHA256SUMS, and the data/hendrycks_table1.csv
+provenance comment to the new paths. Radar regeneration is unaffected (radar.py
+reads data/ CSVs, not the PDFs; Test-1 hash unchanged). This makes the pilot
+safe to cold-resume (acceptance Test 2). Reproducibility hashing retained here
+(the PDFs were already hashed) though now optional per ADR-001.

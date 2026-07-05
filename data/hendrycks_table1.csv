@@ -1,5 +1,5 @@
 # Source: Hendrycks et al., "A Definition of AGI", arXiv:2510.18212v3, Table 1.
-# Verified against arxiv.org/html/2510.18212v3 on 2026-07-03 (local pinned PDF: refs/hendrycks-2025-a-definition-of-agi-2510.18212v3.pdf).
+# Verified against arxiv.org/html/2510.18212v3 on 2026-07-03 (local pinned PDF: refs/originals/hendrycks-2025-a-definition-of-agi-2510.18212v3.pdf).
 # contrib = contribution to overall AGI score (each domain weighted 10%); domain_score_pct = contrib*10.
 domain,code,gpt4_contrib_pct,gpt5_contrib_pct,gpt4_domain_score_pct,gpt5_domain_score_pct
 General Knowledge,K,8,9,80,90
