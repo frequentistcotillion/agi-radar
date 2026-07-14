@@ -11,7 +11,8 @@ This page is the conceptual summary.*
 wildly superhuman in some directions, below a child in others. This chart
 makes the jaggedness visible. It takes the ten cognitive domains that
 psychometrics uses to describe *human* general intelligence
-(Cattell-Horn-Carroll theory, via Hendrycks et al.'s *A Definition of AGI*),
+(Cattell-Horn-Carroll theory, via Hendrycks et al.'s
+[*A Definition of AGI*](https://arxiv.org/abs/2510.18212)),
 and plots where frontier AI stood on each at three moments: GPT-4 (2023),
 GPT-5 (2025), and the mid-2026 frontier.
 
@@ -32,9 +33,11 @@ human level; dynamic is close to zero, and has barely moved in three years.
   mean "30th-percentile human." We initially drew this ambiguously; a
   recipient's critique caught it and the chart now says what it means.
 - **Above the ring, placements are claims, not measurements.** Expert
-  (90th) and Virtuoso (99th) rings come from Google DeepMind's *Levels of
-  AGI*; the collective rings (research team, enterprise) from their 2026
-  *From AGI to ASI*. An axis only crosses a ring when a public benchmark
+  (90th) and Virtuoso (99th) rings come from Google DeepMind's
+  [*Levels of AGI*](https://arxiv.org/abs/2311.02462); the collective rings
+  (research team, enterprise) from their 2026
+  [*From AGI to ASI*](https://arxiv.org/abs/2606.12683). An axis only crosses
+  a ring when a public benchmark
   shows the model beating humans at roughly that level *on that domain's
   mapped benchmark* — and the two collective rings are currently
   unreachable by any criterion we'd accept, which we say out loud rather
@@ -129,3 +132,31 @@ Good — that's the designed use. Find the axis's row in
 or a primary source we missed, and the chart regenerates in one command.
 The bar for changing a score is the bar everything here already cleared:
 dated, public, verifiable evidence.
+
+## References
+
+The chart's *framework* — its axes, its anchor, and its rings — rests on three
+papers, all retrieved from arXiv on 2026-07-03 and pinned in [refs/](refs/) as
+text extracts (verbatim source PDFs in `refs/originals/`):
+
+1. **[A Definition of AGI](https://arxiv.org/abs/2510.18212)** — Hendrycks, D.,
+   et al. (2025). arXiv:2510.18212v3. License: CC BY 4.0.
+   *The Cattell–Horn–Carroll psychometric base: the ten cognitive domains, the
+   "well-educated adult" anchor, and the GPT-4 / GPT-5 per-domain scores that
+   carry eras 1–2 verbatim.*
+2. **[Levels of AGI: Operationalizing Progress on the Path to AGI](https://arxiv.org/abs/2311.02462)**
+   — Morris, M. R., et al. (Google DeepMind, 2023). arXiv:2311.02462.
+   License: CC BY-NC-ND 4.0.
+   *The percentile performance levels — Competent (50th), Expert (90th),
+   Virtuoso (99th) — that become the radar's rings.*
+3. **[From AGI to ASI](https://arxiv.org/abs/2606.12683)** — Genewein, T., et
+   al. (Google DeepMind, 2026). arXiv:2606.12683v1. License: CC BY 4.0.
+   *The above-individual-human collective rings (research team, enterprise).*
+
+The chart's *data* — the per-axis benchmark evidence for the mid-2026 era
+(GPQA, IMO, ARC-AGI-2/3, LongBench v2, BLINK, MMAU, MRCR, BALROG, and the
+rest), each with its score, date, and source link — lives in
+[data/era3_evidence.csv](data/era3_evidence.csv), kept there as the single
+source of truth rather than duplicated here. Full citations for every input
+are also in [recipe.md](recipe.md) (Inputs); the PDF redistribution licenses
+are itemized in [refs/LICENSES.md](refs/LICENSES.md).

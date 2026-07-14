@@ -705,3 +705,36 @@ dent in resumability (the cold agent stayed oriented via the immutable turn log,
 but Minutes are meant to be the fast path). Per AGENTS.md, Minutes may only be
 rewritten by a compaction turn — this is it. NOTE: a full archival compaction is
 now DUE (41 raw turns > ~30 threshold) and is deferred to a dedicated pass.
+
+### [2026-07-14 09:07 -04:00] greg — critique
+Instruction being acted on: "the human-facing document needs to list references
+and link papers btw:
+https://github.com/frequentistcotillion/agi-radar/blob/main/NOTEBOOK.md"
+
+### [2026-07-14 09:07 -04:00] claude — draft
+Fixed a real gap in NOTEBOOK.md: it named the three framework papers only in
+running prose (Hendrycks, Morris/GDM, Genewein/GDM) with no citations and no
+links — so a human reader could not click through to a source. This also
+undershot the AGENTS.md audit-trail standard (ADR-001), which names "a
+human-readable references list, each source with a full citation" as a core
+part of a thread's provenance. Changes, all to the deliverable doc only (no
+turn edited — turn-immutability intact):
+(1) Added a `## References` section at the end listing all three papers with
+    full citation, arXiv ID + version, license, and a one-line note on what
+    each contributes to the chart (Hendrycks = axes+anchor+era-1/2 scores;
+    Morris = the percentile rings; Genewein = the collective rings). Each
+    title links to its arXiv abstract; all three URLs verified HTTP 200
+    before publishing (this is a public-facing file).
+(2) Hyperlinked the first inline mention of each paper in the body ("The
+    idea" and "How to read the scale") so links exist at point-of-reference,
+    not only in the trailing list.
+(3) Kept the per-axis benchmark evidence single-sourced: the References
+    section points to data/era3_evidence.csv (scores + dates + source links)
+    rather than duplicating ~15 benchmark URLs into the prose — the CSV stays
+    the single source of truth, recipe.md (Inputs) and refs/LICENSES.md are
+    cross-linked for the full machine-checkable citations and license basis.
+WHY this shape: the papers define the chart's *structure*, the CSV holds its
+*data* — the reference apparatus now mirrors that split instead of blurring it.
+NOTE: the public agi-radar mirror is still the pre-2026-07-05-retrofit split,
+so this NOTEBOOK change is NOT yet live publicly; publishing it needs a
+subtree re-split + push, held at the human gate (outward action).
