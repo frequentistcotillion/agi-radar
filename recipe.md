@@ -2,18 +2,23 @@
 ## Claim
 
 `radar.svg` asserts: measured on Hendrycks et al.'s ten CHC cognitive domains
-(with On-the-Spot Reasoning split into static vs dynamic), frontier AI in
-mid-2026 (Mythos-class) is at or above the well-educated-adult anchor on
-Mathematics (Virtuoso ring), Knowledge (Expert ring), and Reading & Writing
-(anchor), with static reasoning just below the anchor (~85) — while
-remaining far below the anchor on dynamic reasoning (~5/100, ARC-AGI-3),
-long-term memory storage (~10/100, the standing bottleneck), and materially
-below it on working memory, memory retrieval, visual, auditory, and speed. The capability profile is jagged and
-the static/dynamic reasoning split (~85 vs ~5) is its sharpest asymmetry.
-Era-1/2 series (GPT-4 27%, GPT-5 57%) are the paper's own scores — with one
-exception: era-2 Reasoning (dynamic) is 5, from ARC-AGI-3 measurements of
-GPT-5-era systems, NOT the paper's composite R (see Method 4). The era-3
-series is this thread's benchmark-mapped estimate, not a published score.
+(On-the-Spot Reasoning split into static vs dynamic), CURRENT FRONTIER AI
+(era-3 = SOTA per axis, mid-2026 → 2026-07) is at or above the
+well-educated-adult anchor on Mathematics (Virtuoso — IMO gold + FrontierMath
+saturating every tier), Knowledge (Expert — GPQA-D ~94% vs ~65–70% experts),
+and Reading & Writing (anchor); **at the doorstep of the anchor on static
+reasoning (~90** — ARC-AGI-2 92.5% vs ~60% human panel, but ONE benchmark so
+near-not-at); and far below the anchor on **dynamic reasoning (~12/100** —
+ARC-AGI-3 ~8–13% plus one game won: off the floor, still the dominant
+bottleneck) and long-term memory storage (~12/100). Working memory, memory
+retrieval, visual and auditory sit materially below the anchor as
+LOW-CONFIDENCE coverage estimates (most lack a human baseline). The profile is
+jagged; the static-vs-dynamic reasoning split (**~90 vs ~12**) is its sharpest
+asymmetry — narrowed from the 2026-07-03 ~85-vs-5 read but intact, and the
+"flat for 3 years" framing is retired. Eras 1–2 (GPT-4 27%, GPT-5 57%) are
+Hendrycks' own scores (era-2 R-dynamic = 5 excepted, per Method 4); era-3 is
+this thread's SOTA-envelope benchmark-mapped estimate (best model per axis,
+named + dated in era3_evidence.csv / MAPPING.md), not a single published score.
 
 ## Inputs
 
@@ -121,16 +126,20 @@ series is this thread's benchmark-mapped estimate, not a published score.
    polygons, anchor ring emphasized, ordinality footnoted on the chart.
    Ring labels (incl. Competent/50th) render above the polygons with a
    white halo so the inner ones stay legible over the era fills.
-7. **Re-score RS-2026-07-14 — single-lineage + calibration bridge (PROPOSED,
-   pending operator OK; not yet applied to radar_scores.csv).** The era-3
-   column is being re-derived from the **GPT-4 → GPT-5 → GPT-5.6 Sol** lineage
-   (operator decision 2026-07-14; consistent with eras 1–2, which are the
-   GPT line in Hendrycks Table 1). Rules governing every re-scored point:
-   a. **Single-lineage lock.** Era-3 = GPT-5.6 Sol's OWN published result on
-      each axis's mapped benchmark. Where Sol has no published result on that
-      benchmark, the point is carried from era-2 with a `no-Sol-data` flag, or
-      the axis is marked provisional — NEVER back-filled with a different
-      model (the model-snapshot conflation codex flagged 2026-07-14).
+7. **Re-score RS-2026-07-14 — SOTA-envelope + calibration bridge (APPLIED
+   2026-07-14; radar.svg hash 6a8d4110…c943).** FRAMING NOTE: the re-score
+   first tried single-lineage (GPT-5.6 Sol), but the re-consult surfaced that
+   Sol has confident data on only 4 of 11 axes — a strict Sol chart is mostly
+   holes. Operator ruled SOTA-envelope instead: **era-3 = the best current
+   result per axis, each model named + dated** (eras 1–2 stay GPT-4/GPT-5 from
+   Hendrycks; a chart footnote states era-3 is a per-axis frontier envelope,
+   not one system). Rules governing every re-scored point:
+   a. **SOTA-envelope.** Era-3 = the best current public result per axis (any
+      model), each named + dated in era3_evidence.csv. (Single-lineage on
+      GPT-5.6 Sol was tried and dropped — Sol has confident data on only 4 of
+      11 axes, so a strict Sol chart is mostly holes.) Model-version AND
+      benchmark-version still locked per point; no collapsing distinct
+      models/versions into a vague "frontier".
    b. **Primary-sets-the-point.** Only a primary source (benchmark's own
       site / paper / official leaderboard) may SET a point; secondary
       aggregators may only flag a lead to verify at primary. Each point logs
@@ -145,11 +154,15 @@ series is this thread's benchmark-mapped estimate, not a published score.
         percentile-rich evidence of Method 3, not merely beating a mean.
         → e.g. ARC-AGI-2 92.5% vs ~60% human panel puts R-static ≈ 100/anchor,
         NOT 92 (correcting codex's direct-% mapping).
-      • If Sol < the human reference, the score is the honest fraction of the
-        anchor the benchmark shows Sol covering (coverage), low-confidence
-        flagged. → ARC-AGI-3: Sol 7–13% and loses games humans complete →
-        still far below anchor; the ft09 87% win is spiky, noted but NOT
-        anchor-crossing.
+      • If the model < the human reference, the score is the honest fraction of
+        the anchor the benchmark shows it covering (coverage), low-confidence
+        flagged. → ARC-AGI-3: 7–13% and loses games humans complete → still far
+        below anchor; the ft09 87% win is spiky, noted but NOT anchor-crossing.
+      • **REFINED (gemini re-consult 2026-07-14):** position-vs-human is a
+        JUDGMENT informed by the ratio, NOT equal to it — 30% where humans get
+        60% is not "half the construct." A single benchmark beating the human
+        MEAN lands NEAR the anchor (~90), not AT it, unless a battery
+        corroborates (this is why R-static = 90, not 100).
    d. **Construct integrity over convenience.** Where the mapped benchmark is
       a poor proxy for the CHC construct (codex: MR ← hallucination-rate is
       factuality, not durable retrieval), FIX the mapping — pick a better
@@ -168,7 +181,9 @@ series is this thread's benchmark-mapped estimate, not a published score.
 cd code
 rm -f ../radar.svg          # ensure a stale artifact can't mask a broken generator
 python3 radar.py            # reads ../data/radar_scores.csv, writes ../radar.svg
-sha256sum ../radar.svg      # ae8479c87ffba30717c89038558770ce30a027f981cbaa73059004506d981246
+sha256sum ../radar.svg      # 6a8d4110decbe60bab459773c07b130eed46b2e9ac7d0b9ba6a61c4852ebc943
 ```
 Runtime: Python 3.12.3 (Ubuntu 24.04), stdlib only (csv, math, sys, xml.sax.saxutils). Output
 `radar.svg` is deterministic; the SHA-256 above is the pinned artifact hash.
+**Hash lineage:** ae8479c8…1246 (2026-07-03 original) → **6a8d4110…c943 (RS-2026-07-14
+re-score, CURRENT).** The prior artifact is superseded on the record, not deleted.

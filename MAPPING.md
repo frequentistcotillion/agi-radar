@@ -3,69 +3,60 @@
 **The authoritative mapping** for the AGI Radar. Every plotted point traces
 through this table: a CHC **axis** (construct) → the **benchmark(s)** that
 operationalize it → the **human baseline** on that benchmark → the **placement**
-on the 0–100 well-educated-adult-anchor scale (via the calibration bridge,
-recipe.md Method 7).
+on the 0–100 well-educated-adult-anchor scale (calibration bridge, recipe
+Method 7).
 
-**Re-score RS-2026-07-14 · single lineage = GPT-4 → GPT-5 → GPT-5.6 Sol.**
-Era-3 uses GPT-5.6 Sol's *own* result where one exists; where Sol is unscored on
-the mapped benchmark, the point is **carried/provisional** (never back-filled
-with another model). Status below is for the DRAFT re-score — placements marked
-`prov` are not yet locked and several await final primary numbers + the mandated
-re-consult (recipe Method 7e) before radar.svg is regenerated.
+**Re-score RS-2026-07-14 · SOTA-envelope (APPLIED; radar.svg `6a8d4110…c943`).**
+Era-3 = the **best current public result per axis** (any model, named + dated
+below), placed via the calibration bridge and adversarially re-consulted
+(gemini 2026-07-14; codex 2026-07-09). *Single-lineage on GPT-5.6 Sol was tried
+first and dropped* — Sol has confident data on only 4 of 11 axes, so a strict
+Sol chart is mostly holes. Eras 1–2 stay GPT-4/GPT-5 (Hendrycks); a chart
+footnote flags era-3 as a per-axis frontier envelope, not one system.
 
 ## Calibration bridge (how a benchmark number becomes a placement)
 
 A placement is the model's **position relative to the benchmark's human
-reference**, NOT the raw benchmark %:
-- Sol **≥** the human baseline → axis is **at the anchor (100)**; a ring
-  (Expert 90th / Virtuoso 99th) needs percentile-rich evidence, not beating a mean.
-- Sol **<** the human baseline → placement is the honest **fraction of the
-  anchor** the benchmark shows Sol covering (low-confidence flagged).
-- **No human baseline** → the axis cannot be anchored; it stays an explicit
-  coverage-estimate (low confidence), by nature of the benchmark.
+reference**, NOT the raw benchmark % — and it is a **judgment informed by** that
+position, not an arithmetic ratio (gemini, 2026-07-14: 30% where humans get 60%
+is not "half the construct"):
+- Model **≥** human baseline → **near/at the anchor**; a *single* benchmark
+  beating the human **mean** lands **~90 (near), not 100 (at)**, unless a broad
+  battery corroborates. A ring (Expert 90th / Virtuoso 99th) needs
+  percentile-rich evidence, not beating a mean.
+- Model **<** human baseline → placement = the honest **fraction of the anchor**
+  covered (low-confidence flagged).
+- **No human baseline** → the axis cannot be anchored; explicit low-confidence
+  coverage estimate.
 
-## The mapping
+## The mapping (era-3 = current SOTA)
 
-| Axis | Construct | Benchmark (leaderboard) | Human baseline (source) | Sol (single-lineage) | Placement | Conf |
+| Axis | Construct | Benchmark | Human baseline (source) | Era-3 SOTA (model, date) | Placement | Conf |
 |---|---|---|---|---|---|---|
-| **K** | knowledge breadth+depth | GPQA Diamond (HLE = harder frontier context) | experts **~65–70%** (GPQA paper; OpenAI PhDs 69.7%) | **94.6%** | **100 / Expert** | high |
-| **M** | competition + research math | FrontierMath T1-3 + **T4v2** + IMO | IMO gold ≈ top 0.01%; FM stumps pro mathematicians | T1-3 **89%**, T4v2 **83%**; IMO gold | **100 / Virtuoso** | high |
-| **R-static** | solve the fixed puzzle | ARC-AGI-2 | human panel **~60%** (arcprize) | **92.5%** (primary) | **100 / anchor** | high |
-| **R-dynamic** | learn a novel env by acting | ARC-AGI-3 (+ BALROG novel-env slice) | humans **~100%** (arcprize) | **7.78% semi-priv / 13.33% pub**; won ft09 87% | **12** (far below) | med |
-| **RW** | comprehension + composition | **LongBench Pro** (comp) + **HelloBench** (writing) *(was LongBench v2 — stale)* | TBD — needs primary | Sol unscored | **prov** (carry) | low |
-| **WM** | hold + manipulate context | MRCR | **none** — no human reads 1M tokens | **91.5%** *(version unconfirmed)* | **prov** (no anchor) | low |
-| **MS** | accumulate knowledge from use | MemoryBench / continual-learning | humans accumulate continuously (no %) | Sol unscored | **~10–12** | low |
-| **MR** | recall *without confabulating* | **LongMemEval** (primary) / LoCoMo *(was hallucination-rate — wrong proxy)* | models lag humans; no clean % | Sol unscored | **prov** | low |
-| **V** | see — perception (Gv) | BLINK *(benchmark current; our old # was stale)* | humans **95.7%** (BLINK paper) | Sol unscored on BLINK (has MMMU-Pro 83%) | **prov ~70** | low |
-| **A** | understand sound/speech/music | MMAU | humans **~82%** (MMAU paper) | Sol unscored (no audio) | **prov** (carry) | low |
-| **S** | processing speed | none exists | — | n/a | **30** (carried) | v.low |
+| **K** | knowledge breadth+depth | GPQA Diamond (HLE = harder context) | experts **~65–70%** (GPQA paper; OpenAI PhDs 69.7%) | **94.6%** (GPT-5.6 Sol) | **100 / Expert** | high |
+| **M** | competition + research math | FrontierMath T1-3 + T4v2 + IMO | IMO gold ≈ top 0.01%; FM stumps pro mathematicians | T4v2 **88%** (Fable 5), T1-3 **89%** (Sol); IMO gold | **100 / Virtuoso** | high |
+| **R-static** | solve the fixed puzzle | ARC-AGI-2 | human panel **~60%** (arcprize) | **92.5%** (Sol, 2026-07-09) | **90** (near anchor, no ring) | high |
+| **R-dynamic** | learn a novel env by acting | ARC-AGI-3 (+ BALROG) | humans **~100%** (arcprize) | **13.33% pub / 7.78%** (Sol); won ft09 87% | **12** (far below) | med |
+| **RW** | comprehension + composition | LongBench v2/Pro (read) + HelloBench (write) | time-constrained experts **53.7%** (LongBench v2) | Opus 4.5 **64.4%** (LB v2) | **100 / anchor** | med |
+| **WM** | hold + manipulate context | MRCR | **none** — no human reads 1M tokens | **~91.5%** (Sol; version unconfirmed) | **70** | low |
+| **MS** | accumulate knowledge from use | MemoryBench / continual-learning | humans accumulate continuously (no %) | "far from satisfying" (authors) | **12** | low |
+| **MR** | recall *without confabulating* | LongMemEval (primary) / LoCoMo | models lag humans; no clean % | mem-systems **83–86%**; oracle GPT-4o 82.4% | **55** | low |
+| **V** | see — perception (Gv) | BLINK | humans **95.7%** (BLINK paper) | **81.4%** (Seed 2.1 Pro) | **78** | med |
+| **A** | understand sound/speech/music | MMAU | humans **~82%** (MMAU paper) | **65.6%** (Qwen2.5-Omni-7B) | **70** | low |
+| **S** | processing speed | none exists | — | — | **30** (carried) | v.low |
 
 ## What the human column reveals
 
-Filling the human-baseline column exposes that the 11 axes split three ways:
-- **Human-anchored (6):** K, M, R-static, R-dynamic, V, A — a real human number
-  exists, so placement is rigorous.
-- **No human baseline (4):** WM (MRCR synthetic), MS, MR (agent-memory benches),
-  and the below-anchor memory region generally — placement is an explicit
-  coverage-estimate, not a human-relative measurement.
-- **No benchmark (1):** S.
+Only **~6 of 11 axes have a real human baseline** (K, M, R-static, R-dynamic, V,
+A), so only those are placed *against human performance*. The rest — WM (MRCR
+synthetic), MS, MR (agent-memory benches lack a clean human %), S (no benchmark)
+— are explicit low-confidence coverage estimates. That is the honest reason the
+below-anchor region of the chart is soft, and it is a finding, not a defect.
 
-So only ~6 of 11 points can be placed *against human performance*; the rest are
-soft by construction. This is the honest reason the below-anchor region of the
-chart carries low confidence.
+## Headline (RS-2026-07-14)
 
-## Field SOTA (context only — NOT plotted; single-lineage plots Sol)
-
-Where Sol is unscored, the current best public number (any model) is recorded so
-readers know where the frontier sits — but it does not set the point:
-- V / BLINK: **Seed 2.1 Pro 0.814** (still < the 95.7% human anchor)
-- A / MMAU: **Qwen2.5-Omni-7B 0.656** (a 7B specialist; < ~82% human)
-- MR / LongMemEval: ~94.4% (top system) · LoCoMo ~92.5%
-
-## Open items before lock
-
-1. RW: fetch primary LongBench Pro + HelloBench human baselines & any Sol number.
-2. WM: version-lock the Sol MRCR 91.5% (needle count / context length) vs our old 76%.
-3. MR: confirm LongMemEval human ceiling (if any) and any Sol number.
-4. Mandatory re-consult (Method 7e) — R-static +15 and the R-dynamic headline
-   change both trip the >10pt / headline-change gate — before radar.svg is regenerated.
+Static reasoning is **at the doorstep of the human anchor (~90)** while dynamic
+reasoning has **come off the floor (~12) but remains the dominant bottleneck**.
+The static-vs-dynamic split (**~90 vs ~12**) is still the chart's sharpest
+asymmetry — narrowed from the 2026-07-03 ~85-vs-5 read; the "flat for 3 years"
+claim is retired (a frontier model won an ARC-AGI-3 game).

@@ -1093,3 +1093,36 @@ substance:
    bottleneck." Second clause is well-supported; first no longer overclaims.
 The provisional-majority (7/11) and its rendering are a design fork for the
 operator before re-plot — surfaced next.
+
+### [2026-07-14 11:05 -04:00] greg — decision
+Instruction being acted on: on the render fork for the 7 provisional axes, ruled
+**SOTA-envelope** — abandon single-lineage; plot the best current result per
+axis, each model named + dated. One complete current polygon.
+
+### [2026-07-14 11:17 -04:00] claude — draft
+**Re-plot EXECUTED (RS-2026-07-14). New artifact hash 6a8d4110…c943**
+(was ae8479c8…1246; deterministic across 2 runs, XML-valid, 11 axes).
+Framing = SOTA-envelope (era-3 = best model per axis, named+dated); eras 1–2
+stay GPT-4/GPT-5. Final era-3 placements (old→new) via the calibration bridge
+(position vs human baseline as JUDGMENT, per gemini):
+- R-static 85→**90** (ARC-AGI-2 92.5% > ~60% panel, but one benchmark → near
+  not at anchor; gemini pulled this back from my too-aggressive 100).
+- R-dynamic 5→**12** (ARC-AGI-3 7.78/13.33%, ft09 87% win — off floor, dominant
+  bottleneck).
+- V 70→**78** (BLINK Seed 2.1 Pro 81.4% vs 95.7% human).
+- A 80→**70** (MMAU 65.6% specialist vs ~82% human — current audio SOTA is
+  lower than the old plotted figure).
+- WM 60→**70** (MRCR ~91.5% but NO human anchor — soft), MS 10→**12**,
+  MR 60→**55** (re-mapped hallucination→LongMemEval; durable recall is weaker
+  than the old proxy — soft).
+- K/M/RW unchanged (100/Expert, 100/Virtuoso, 100/anchor); S 30 unchanged.
+Headline now: **static ~90 (doorstep of anchor) vs dynamic ~12 (off the floor,
+still dominant bottleneck)** — sharpest asymmetry intact, "flat for 3 years"
+retired. Docs brought into consistency with the artifact: radar_scores.csv
+(era-3 + re-score header), recipe.md (Claim + pinned hash + Method 7 APPLIED +
+calibration refinement), MAPPING.md (SOTA-envelope, final placements), NOTEBOOK.md
+(headline, mapping table, audit RESOLVED, weaknesses), era3_evidence.csv (plotted
+SOTA rows). Below-anchor axes carry explicit LOW-CONFIDENCE flags (only 6/11 have
+a human baseline). GATE REMAINING: re-publish the public agi-radar mirror
+(outward action) — held for operator OK. Minutes refresh + full archival
+compaction still DUE (now ~50 raw turns).

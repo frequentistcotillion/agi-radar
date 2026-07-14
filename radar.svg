@@ -17,55 +17,55 @@
 <line x1="460.00" y1="420.00" x2="756.95" y2="462.69" stroke="#dddddd" stroke-width="0.8"/>
 <text x="777.73" y="469.68" text-anchor="start" font-size="13" fill="#1a1a1a">Reasoning (static)</text>
 <line x1="460.00" y1="420.00" x2="686.72" y2="616.46" stroke="#dddddd" stroke-width="0.8"/>
-<text x="702.60" y="634.21" text-anchor="start" font-size="13" fill="#1a1a1a">Auditory Processing</text>
+<text x="702.60" y="634.21" text-anchor="start" font-size="13" fill="#1a1a1a">Visual Processing</text>
 <line x1="460.00" y1="420.00" x2="544.52" y2="707.85" stroke="#dddddd" stroke-width="0.8"/>
-<text x="550.44" y="732.00" text-anchor="start" font-size="13" fill="#1a1a1a">Visual Processing</text>
+<text x="550.44" y="732.00" text-anchor="start" font-size="13" fill="#1a1a1a">Auditory Processing</text>
 <line x1="460.00" y1="420.00" x2="375.48" y2="707.85" stroke="#dddddd" stroke-width="0.8"/>
-<text x="369.56" y="732.00" text-anchor="end" font-size="13" fill="#1a1a1a">LT Memory Retrieval</text>
+<text x="369.56" y="732.00" text-anchor="end" font-size="13" fill="#1a1a1a">Working Memory</text>
 <line x1="460.00" y1="420.00" x2="233.28" y2="616.46" stroke="#dddddd" stroke-width="0.8"/>
-<text x="217.40" y="634.21" text-anchor="end" font-size="13" fill="#1a1a1a">Working Memory</text>
+<text x="217.40" y="634.21" text-anchor="end" font-size="13" fill="#1a1a1a">LT Memory Retrieval</text>
 <line x1="460.00" y1="420.00" x2="163.05" y2="462.69" stroke="#dddddd" stroke-width="0.8"/>
 <text x="142.27" y="469.68" text-anchor="end" font-size="13" fill="#1a1a1a">Speed</text>
 <line x1="460.00" y1="420.00" x2="187.11" y2="295.38" stroke="#dddddd" stroke-width="0.8"/>
 <text x="168.01" y="290.65" text-anchor="end" font-size="13" fill="#1a1a1a">LT Memory Storage</text>
 <line x1="460.00" y1="420.00" x2="297.81" y2="167.62" stroke="#dddddd" stroke-width="0.8"/>
 <text x="286.45" y="153.96" text-anchor="end" font-size="13" fill="#1a1a1a">Reasoning (dynamic)</text>
-<polygon points="460.00,360.00 524.88,319.05 541.87,382.61 460.00,420.00 460.00,420.00 460.00,420.00 443.10,477.57 437.33,439.65 415.46,426.40 460.00,420.00 460.00,420.00" fill="#9db4c8" fill-opacity="0.14" stroke="#9db4c8" stroke-width="2"/>
+<polygon points="460.00,360.00 524.88,319.05 541.87,382.61 460.00,420.00 460.00,420.00 460.00,420.00 451.55,448.78 414.66,459.29 415.46,426.40 460.00,420.00 460.00,420.00" fill="#9db4c8" fill-opacity="0.14" stroke="#9db4c8" stroke-width="2"/>
 <circle cx="460.00" cy="360.00" r="3" fill="#9db4c8"/>
 <circle cx="524.88" cy="319.05" r="3" fill="#9db4c8"/>
 <circle cx="541.87" cy="382.61" r="3" fill="#9db4c8"/>
 <circle cx="460.00" cy="420.00" r="3" fill="#9db4c8"/>
 <circle cx="460.00" cy="420.00" r="3" fill="#9db4c8"/>
 <circle cx="460.00" cy="420.00" r="3" fill="#9db4c8"/>
-<circle cx="443.10" cy="477.57" r="3" fill="#9db4c8"/>
-<circle cx="437.33" cy="439.65" r="3" fill="#9db4c8"/>
+<circle cx="451.55" cy="448.78" r="3" fill="#9db4c8"/>
+<circle cx="414.66" cy="459.29" r="3" fill="#9db4c8"/>
 <circle cx="415.46" cy="426.40" r="3" fill="#9db4c8"/>
 <circle cx="460.00" cy="420.00" r="3" fill="#9db4c8"/>
 <circle cx="460.00" cy="420.00" r="3" fill="#9db4c8"/>
-<polygon points="460.00,270.00 532.99,306.43 596.44,357.69 563.93,434.94 528.02,478.94 476.90,477.57 443.10,477.57 414.66,459.29 415.46,426.40 460.00,420.00 455.95,413.69" fill="#4a7ba6" fill-opacity="0.14" stroke="#4a7ba6" stroke-width="2"/>
+<polygon points="460.00,270.00 532.99,306.43 596.44,357.69 563.93,434.94 505.34,459.29 485.36,506.35 443.10,477.57 414.66,459.29 415.46,426.40 460.00,420.00 455.95,413.69" fill="#4a7ba6" fill-opacity="0.14" stroke="#4a7ba6" stroke-width="2"/>
 <circle cx="460.00" cy="270.00" r="3" fill="#4a7ba6"/>
 <circle cx="532.99" cy="306.43" r="3" fill="#4a7ba6"/>
 <circle cx="596.44" cy="357.69" r="3" fill="#4a7ba6"/>
 <circle cx="563.93" cy="434.94" r="3" fill="#4a7ba6"/>
-<circle cx="528.02" cy="478.94" r="3" fill="#4a7ba6"/>
-<circle cx="476.90" cy="477.57" r="3" fill="#4a7ba6"/>
+<circle cx="505.34" cy="459.29" r="3" fill="#4a7ba6"/>
+<circle cx="485.36" cy="506.35" r="3" fill="#4a7ba6"/>
 <circle cx="443.10" cy="477.57" r="3" fill="#4a7ba6"/>
 <circle cx="414.66" cy="459.29" r="3" fill="#4a7ba6"/>
 <circle cx="415.46" cy="426.40" r="3" fill="#4a7ba6"/>
 <circle cx="460.00" cy="420.00" r="3" fill="#4a7ba6"/>
 <circle cx="455.95" cy="413.69" r="3" fill="#4a7ba6"/>
-<polygon points="460.00,195.00 561.37,262.26 596.44,357.69 586.20,438.15 550.69,498.58 489.58,520.75 434.64,506.35 391.98,478.94 415.46,426.40 446.36,413.77 455.95,413.69" fill="#c0392b" fill-opacity="0.14" stroke="#c0392b" stroke-width="2"/>
+<polygon points="460.00,195.00 561.37,262.26 596.44,357.69 593.63,439.21 548.42,496.62 489.58,520.75 430.42,520.75 397.65,474.03 415.46,426.40 443.63,412.52 450.27,404.86" fill="#c0392b" fill-opacity="0.14" stroke="#c0392b" stroke-width="2"/>
 <circle cx="460.00" cy="195.00" r="3" fill="#c0392b"/>
 <circle cx="561.37" cy="262.26" r="3" fill="#c0392b"/>
 <circle cx="596.44" cy="357.69" r="3" fill="#c0392b"/>
-<circle cx="586.20" cy="438.15" r="3" fill="#c0392b"/>
-<circle cx="550.69" cy="498.58" r="3" fill="#c0392b"/>
+<circle cx="593.63" cy="439.21" r="3" fill="#c0392b"/>
+<circle cx="548.42" cy="496.62" r="3" fill="#c0392b"/>
 <circle cx="489.58" cy="520.75" r="3" fill="#c0392b"/>
-<circle cx="434.64" cy="506.35" r="3" fill="#c0392b"/>
-<circle cx="391.98" cy="478.94" r="3" fill="#c0392b"/>
+<circle cx="430.42" cy="520.75" r="3" fill="#c0392b"/>
+<circle cx="397.65" cy="474.03" r="3" fill="#c0392b"/>
 <circle cx="415.46" cy="426.40" r="3" fill="#c0392b"/>
-<circle cx="446.36" cy="413.77" r="3" fill="#c0392b"/>
-<circle cx="455.95" cy="413.69" r="3" fill="#c0392b"/>
+<circle cx="443.63" cy="412.52" r="3" fill="#c0392b"/>
+<circle cx="450.27" cy="404.86" r="3" fill="#c0392b"/>
 <text x="466.00" y="341.00" font-size="10.5" fill="#777" stroke="white" stroke-width="3" paint-order="stroke">0.5 × anchor (coverage)</text>
 <text x="466.00" y="266.00" font-size="10.5" fill="#1a1a1a" stroke="white" stroke-width="3" paint-order="stroke">Well-educated adult (~80th)</text>
 <text x="466.00" y="228.50" font-size="10.5" fill="#777" stroke="white" stroke-width="3" paint-order="stroke">Expert (90th)</text>
