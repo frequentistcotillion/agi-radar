@@ -971,3 +971,30 @@ So only ~6 of 11 axes can be placed rigorously against the human anchor; the
 other ~5 stay explicit coverage-estimates (low confidence) — which is exactly
 why the below-anchor region of the chart is soft. Proposed re-mapping put to
 operator for red-team before locking + fetching final primary numbers.
+
+### [2026-07-14 10:16 -04:00] greg — decision
+Instruction being acted on: red-team answers — "(1) yes [RW → LongBench Pro +
+HelloBench]; (2) whichever you judge best signal [MR benchmark]; (3) MRCR [keep
+for WM]; (4) nope [no other Class-1 swaps]."
+
+### [2026-07-14 10:16 -04:00] claude — decision
+Mapping LOCKED and written to a new authoritative doc, `MAPPING.md` (axis →
+benchmark → human baseline → placement, the operator's two asks in one table).
+Decisions: RW = LongBench Pro (comprehension) + HelloBench (composition);
+**MR = LongMemEval** (my call on "best signal": it explicitly scores *abstention*
+— declining to answer rather than confabulate — which is the tightest match to
+the CHC construct "recall WITHOUT confabulating"; LoCoMo is more-reported but
+does not isolate confabulation and has documented data-quality critiques, kept
+as secondary); WM = MRCR (retained despite having no human anchor — flagged);
+V/BLINK, A/MMAU, GPQA, ARC-AGI-2/3, FrontierMath all kept. MAPPING.md also
+carries the calibration bridge and a "field SOTA (context, not plotted)" block
+so single-lineage holes still tell the reader where the frontier sits.
+DRAFT era-3 placements derived via the bridge: **K 100/Expert, M 100/Virtuoso,
+R-static 100/anchor (up from 85 — beats the ~60% panel), R-dynamic 12 (up from
+5 — off the floor, still far below humans), WM/MS/MR/RW/V/A provisional or
+carried (Sol unscored or no human anchor), S 30 carried.** Net: the headline
+asymmetry becomes ~100 vs ~12 and "flat for 3 years" is retired. NOT yet
+applied to radar_scores.csv: R-static (+15) and the R-dynamic headline change
+both trip the Method-7e >10pt/headline gate → mandatory re-consult (codex +
+gemini) BEFORE regenerating radar.svg. Open items before lock listed in
+MAPPING.md (RW/WM/MR primary numbers still to pin).
