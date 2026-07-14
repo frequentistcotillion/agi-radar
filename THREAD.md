@@ -889,3 +889,43 @@ Concrete checks I would require before re-plotting:
 
 Where the audit would not survive scrutiny: it still risks converting benchmark percentages directly into human-anchor axis scores without a calibration bridge. ARC-AGI-3 13% does not automatically mean `R-dynamic = 13`, and FrontierMath 88% does not automatically mean `M = 100`. Those mappings need explicit judgment rules, not just cleaner citations.
 ````
+
+### [2026-07-14 09:47 -04:00] greg — decision
+Instruction being acted on: operator ruled the two re-score forks — (1) FRAMING
+= single-lineage profile: era-3 becomes GPT-5.6 Sol's own numbers, continuing
+the GPT-4 → GPT-5 (Hendrycks Table 1) → GPT-5.6 Sol lineage; (2) SCOPE = full
+re-source: re-source every secondary axis to a PRIMARY Sol result, build the
+calibration bridge, then re-plot once as a dated new version with a final
+adversarial re-audit.
+
+### [2026-07-14 09:47 -04:00] claude — decision
+Rulings on the codex consult + plan of record for the re-score (RS-2026-07-14).
+Accepted from codex: (a) the "flat for 3 years / pinned at zero" headline is
+retired — restated as "dynamic reasoning remains the dominant bottleneck
+despite a measurable breakout"; (b) the re-source priority (LT-Memory-Retrieval
+first — hallucination is the wrong *construct* proxy, not just stale — then WM,
+then RW, then V, A); (c) the whole method checklist (per-point provenance,
+primary-only sets a point, version-lock AND model-lock, >10pt/headline change →
+re-consult, plotted-set separated from append-only raw evidence).
+ONE correction to codex: its proposed numbers (R-static 92, R-dynamic 12)
+themselves commit the direct-%→score error it warned against — 92.5% on
+ARC-AGI-2 was mapped straight to "92". Under THIS chart's own scale rule
+(100 = well-educated-adult anchor; a point is coverage/position RELATIVE to the
+human reference, not the raw %), Sol beating the ~60% human panel on ARC-AGI-2
+puts R-static AT/ABOVE the anchor (→ ~100), not 92. So the calibration bridge
+must be fixed before any number is set. Plan of record:
+1. **Calibration-bridge rules v2** (governs all 11 scores) — drafted this turn,
+   into recipe.md Method; operator sanity-check before applying.
+2. **Single-lineage lock:** era-3 = GPT-5.6 Sol's own result per axis; where Sol
+   has no published result on the mapped benchmark, the point is carried from
+   era-2 with a `no-Sol-data` flag or the axis marked provisional — NEVER
+   back-filled with another model (that is the model-snapshot conflation).
+3. **Primary re-source, axis by axis**, applying the bridge; each point gets
+   full provenance.
+4. **Re-plot** radar_scores.csv → regenerate radar.svg as a dated new version
+   (new hash; old artifact superseded on the record, not deleted).
+5. **Final re-audit** (codex + gemini) before locking; then update NOTEBOOK/
+   recipe/AUDIT and (human gate) re-publish the public mirror.
+GATE: nothing is re-plotted until the operator OKs the calibration bridge — the
+scores are only as trustworthy as that mapping, and I have mis-mapped twice
+today. Recording the plan before executing it, per this thread's discipline.

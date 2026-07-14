@@ -121,6 +121,46 @@ series is this thread's benchmark-mapped estimate, not a published score.
    polygons, anchor ring emphasized, ordinality footnoted on the chart.
    Ring labels (incl. Competent/50th) render above the polygons with a
    white halo so the inner ones stay legible over the era fills.
+7. **Re-score RS-2026-07-14 — single-lineage + calibration bridge (PROPOSED,
+   pending operator OK; not yet applied to radar_scores.csv).** The era-3
+   column is being re-derived from the **GPT-4 → GPT-5 → GPT-5.6 Sol** lineage
+   (operator decision 2026-07-14; consistent with eras 1–2, which are the
+   GPT line in Hendrycks Table 1). Rules governing every re-scored point:
+   a. **Single-lineage lock.** Era-3 = GPT-5.6 Sol's OWN published result on
+      each axis's mapped benchmark. Where Sol has no published result on that
+      benchmark, the point is carried from era-2 with a `no-Sol-data` flag, or
+      the axis is marked provisional — NEVER back-filled with a different
+      model (the model-snapshot conflation codex flagged 2026-07-14).
+   b. **Primary-sets-the-point.** Only a primary source (benchmark's own
+      site / paper / official leaderboard) may SET a point; secondary
+      aggregators may only flag a lead to verify at primary. Each point logs
+      benchmark + version + tier + metric + Sol score + eval date + URL +
+      grade in era3_evidence.csv.
+   c. **Calibration bridge — the score is NOT the raw benchmark %.** An axis
+      score is Sol's position RELATIVE to the benchmark's human reference, on
+      the coverage/anchor semantics of Method 2:
+      • If Sol ≥ the benchmark's human-anchor reference (well-educated adult /
+        the benchmark's stated human baseline), the axis is AT the anchor
+        (100). A ring crossing (Expert 90th / Virtuoso 99th) still needs the
+        percentile-rich evidence of Method 3, not merely beating a mean.
+        → e.g. ARC-AGI-2 92.5% vs ~60% human panel puts R-static ≈ 100/anchor,
+        NOT 92 (correcting codex's direct-% mapping).
+      • If Sol < the human reference, the score is the honest fraction of the
+        anchor the benchmark shows Sol covering (coverage), low-confidence
+        flagged. → ARC-AGI-3: Sol 7–13% and loses games humans complete →
+        still far below anchor; the ft09 87% win is spiky, noted but NOT
+        anchor-crossing.
+   d. **Construct integrity over convenience.** Where the mapped benchmark is
+      a poor proxy for the CHC construct (codex: MR ← hallucination-rate is
+      factuality, not durable retrieval), FIX the mapping — pick a better
+      benchmark or mark the axis unmeasurable — do not re-source a wrong proxy.
+   e. **Change control.** Any axis moving >10 points from its 2026-07-03 value,
+      or any headline change, triggers a mandatory adversarial re-consult
+      before radar.svg is regenerated. The plotted set (radar_scores.csv)
+      becomes single-source + dated; era3_evidence.csv stays append-only raw
+      evidence. On OK: execute axis-by-axis → re-plot as a dated new version
+      (new hash, old artifact superseded not deleted) → final re-audit →
+      republish (human gate).
 
 ## Regenerate
 ```
