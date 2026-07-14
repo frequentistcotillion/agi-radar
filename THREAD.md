@@ -1057,3 +1057,39 @@ The second half of the headline ("dynamic off the floor but still the dominant b
 **The single weakest placement:**
 **R-static = 100/anchor** is the most vulnerable point and would not survive methodological scrutiny. Claiming that an AI has entirely saturated the well-educated-adult anchor for all of Static Reasoning based exclusively on ARC-AGI-2 is a massive category error. It conflates a specific test of pattern recognition/abstraction with the entirety of the psychological construct. If published, critics will immediately point to out-of-distribution static reasoning failures in Sol that ARC-AGI-2 fails to capture, dismantling the credibility of the 100-point placement.
 ````
+
+### [2026-07-14 10:42 -04:00] claude — decision
+Rulings on the gemini re-consult (codex seat UNAVAILABLE — 3× consecutive 300s
+timeouts on this prompt; the earlier 09:41 codex consult already gave 92/
+completeness/method input, so both seats are effectively on record. Logging the
+codex-timeout run of 0-for-3 as a tech-debt escalation: consult.py's codex path
+needs the retry-once/longer-timeout fix). Gemini's review is accepted on the
+substance:
+1. **R-static 100 → ~90 (below anchor, NO ring). ACCEPTED.** Gemini (and codex
+   at "92") independently rejected 100/anchor: beating a ~60% panel on ONE
+   benchmark (ARC-AGI-2) does not saturate the whole static-reasoning construct;
+   a low human baseline flags a narrow/synthetic task, not a general proxy. This
+   reverts toward the deliberately-conservative original 85 — a +5 nudge to ~90,
+   not a jump to anchor. The operator flagged R-static as the one to watch; the
+   consult is exactly why. My calibration-bridge "≥ human baseline → 100" was too
+   aggressive for single-benchmark axes.
+2. **R-dynamic = 12. CONFIRMED** by gemini (≈1/8 of anchor; off the floor,
+   brittle, spiky — ft09 is existence-proof not mastery).
+3. **Calibration rule — REFINED, not dropped.** Gemini is right that
+   AI%/human% is NOT linear cognitive coverage (30% where humans get 60% ≠
+   "half the construct"). Rule restated: position-vs-human-baseline is a
+   JUDGMENT informed by the ratio, not equal to it; a single benchmark beating
+   the human mean lands NEAR but not AT the anchor unless a battery corroborates.
+4. **Carried axes = "Frankenstein profile." ACCEPTED as a real problem.**
+   Silently carrying era-2 RW=100 into a chart labelled "Sol" implies unproven
+   saturation. Under strict single-lineage, only **K, M, R-static, R-dynamic**
+   have confident Sol data; RW/WM/MS/MR/V/A are Sol-unscored/no-anchor and S has
+   no benchmark → **7 of 11 axes are provisional.** That is a striking finding,
+   not a defect to paper over. Rendering fix needed so provisional points are
+   VISUALLY distinct from measured ones (not a silent solid polygon).
+5. **Headline — softened.** "static crossed the anchor" is precarious at ~90;
+   restate: "static reasoning is at the doorstep of the human anchor (~90) while
+   dynamic reasoning has come off the floor (~12) but remains the dominant
+   bottleneck." Second clause is well-supported; first no longer overclaims.
+The provisional-majority (7/11) and its rendering are a design fork for the
+operator before re-plot — surfaced next.
