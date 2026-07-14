@@ -929,3 +929,45 @@ must be fixed before any number is set. Plan of record:
 GATE: nothing is re-plotted until the operator OKs the calibration bridge — the
 scores are only as trustworthy as that mapping, and I have mis-mapped twice
 today. Recording the plan before executing it, per this thread's discipline.
+
+### [2026-07-14 10:01 -04:00] greg — decision
+Instruction being acted on: "we need to do two things: (1) clean up the mapping
+from axis to benchmark/leaderboards (e.g. LongBench is stale as shit); (2)
+include a mapping from benchmark to human performance (which then informs radar
+placement)." This makes the benchmark→human-baseline column a first-class part
+of the record, and mandates dropping stale benchmarks — the foundation for the
+calibration bridge (a point can only be placed vs a KNOWN human reference).
+
+### [2026-07-14 10:05 -04:00] claude — research
+Re-sourced current benchmarks + human baselines per axis (primary/paper where
+possible). Findings that change the mapping:
+- **RW / LongBench v2 — CONFIRMED STALE** (operator right). Current successor:
+  **LongBench Pro** (arXiv:2601.02872; bilingual, 8K–256K, 1,500 samples, real
+  docs) for comprehension; the CHC RW construct is TWO-part (comprehension +
+  composition), so long-text GENERATION wants a second benchmark (e.g.
+  HelloBench, arXiv:2409.16191). One long-context number was doing the work of
+  both — a construct gap, not just staleness.
+- **V / BLINK — NOT stale; OUR NUMBER was.** BLINK's leaderboard was updated
+  July 2026 (13 models); SOTA is **Seed 2.1 Pro 0.814**, Qwen3-VL 235B 0.707.
+  We plotted ~70.7% (Qwen3-VL, i.e. NOT even SOTA). So keep BLINK (clean Gv
+  perception construct, real human baseline 95.7%), fix the stale figure.
+- **MR / hallucination — WRONG PROXY confirmed** (codex right). Re-map to
+  2026 agent-memory benchmarks: **LongMemEval** (94.4%), **LoCoMo** (92.5%),
+  BEAM-1M (62%) — these measure durable multi-session recall, the actual
+  construct, not SimpleQA factuality rate.
+- **K / GPQA** human baseline pinned: domain experts ~65% full GPQA (74%
+  discounting self-caught errors); OpenAI PhD experts 69.7% on Diamond.
+  Humanity's Last Exam noted as the harder frontier-knowledge context (no
+  clean "well-educated-adult" anchor, so GPQA stays the anchor benchmark).
+- **A / MMAU** human ~82%; SOTA held by a 7B specialist (Qwen2.5-Omni 65.6%),
+  not the frontier lineage — Sol blank (no audio).
+STRUCTURAL FINDING (the important one, from doing the human column): the axes
+split THREE ways by whether a human baseline even exists —
+  (1) human-anchored (clean baseline): K, M, R-static, R-dynamic, V, A;
+  (2) NO human baseline (synthetic / no norm): WM (MRCR — no human does 1M),
+      MS (memory storage), MR (agent-memory benches lack a clean human %);
+  (3) no benchmark at all: S.
+So only ~6 of 11 axes can be placed rigorously against the human anchor; the
+other ~5 stay explicit coverage-estimates (low confidence) — which is exactly
+why the below-anchor region of the chart is soft. Proposed re-mapping put to
+operator for red-team before locking + fetching final primary numbers.
