@@ -807,3 +807,31 @@ discipline a correction is logged before it is drawn, and re-scoring the
 headline reasoning axes is a judgment call that should get an adversarial
 consult first — so it is teed up as the next step, at the human gate, rather
 than rushed into the artifact now.
+
+### [2026-07-14 09:36 -04:00] greg — critique
+Instruction being acted on: "you are still jacking up the FrontierMath SOTA:
+FrontierMath Tier 4 v2 is at 88% (Fable) and has been above 40% since GPT-5.2:
+https://epoch.ai/benchmarks/frontiermath-tier-4-v2?view=graph&tab=release-date"
+
+### [2026-07-14 09:40 -04:00] claude — decision
+greg is right, and the irony is total: the data-quality audit I just wrote
+repeated the exact version-conflation error it exists to catch. My M-axis row
+cited a "harder full set ~40-48% (GPT-5.4 @ 0.476)" as if that were the hard
+tier's SOTA. It is not — it was a stale/mis-versioned figure (an old
+FrontierMath aggregation), pulled from a secondary source without checking it
+against the primary. Corrected against Epoch's primary page
+(epoch.ai/benchmarks/frontiermath-tier-4-v2, WebSearch-confirmed since the
+graph is JS): FrontierMath **Tier 4 v2** (research-level, error-corrected in
+the 2026-06-12 v2 release that fixed ~42% of problems) is at **88% (Claude
+Fable 5)**, GPT-5.6 Sol ≈83%, GPT-5.5 ≈75% (~13 pts behind Fable), and it has
+been **>40% since GPT-5.2** per the release-date view. So the benchmark is
+saturating across ALL tiers (T1-3 ≈89% too), not just the easy ones — which
+strengthens M=100/Virtuoso rather than complicating it. Fixes applied:
+NOTEBOOK.md audit M-row rewritten to the correct Tier-4-v2 figure; an explicit
+self-correction note added under the corrections table (the audit "ate its own
+dog food"); data/era3_evidence.csv M rows split into a Tier-1-3 row and a
+primary-sourced Tier-4-v2 row that records the correction. Second-order lesson,
+logged for the workshop: a source-discipline pass is not exempt from source
+discipline — every number it introduces needs its own primary check. I moved
+too fast on a secondary figure twice on the same axis; the fix was to go to
+the benchmark's own page, which is what the audit told everyone else to do.

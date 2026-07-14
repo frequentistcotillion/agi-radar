@@ -110,8 +110,15 @@ correction is logged *before* it is drawn. The re-score is the next step
 |---|---|---|---|---|
 | **R-dynamic** | 5 — "ARC-AGI-3 <1%, hasn't moved" | ARC-AGI-3 **7.78% semi-private / 13.33% public**; **won game ft09 at 87%** (max reasoning) | [arcprize.org](https://arcprize.org/results/openai-gpt-5-6-sol) **[primary]**, 2026-07-09 | **WRONG-as-stated.** Our single sharpest claim ("dynamic reasoning ≈ 0, flat for 3 years") is falsified — the axis is off the floor and one game is essentially solved. Highest-priority fix. |
 | **R-static** | 85 — "~54% standalone; we *excluded* an unverified 85%" | ARC-AGI-2 **92.5%** (max reasoning) | [arcprize.org](https://arcprize.org/results/openai-gpt-5-6-sol) **[primary]**, 2026-07-09 | **STALE.** Now at/above the anchor. Ironic: the ~85% we discarded as unverifiable is beaten by a *verified* 92.5%. |
-| **M (Math)** | "FrontierMath T1-3 **>40%**" | FrontierMath is version-fragmented: **T1-3 ≈ 89%** (Sol) vs the harder full set **≈ 40–48%** (GPT-5.4 @ 0.476) | benchlm.ai / llm-stats.com **[secondary]**; our datum was from bracai.eu **[weak]** | **WRONG-as-stated / mis-sourced.** ">40%" understates T1-3 by ~half *and* silently conflates two different FrontierMath versions. (The M=100/Virtuoso *conclusion* survives — IMO gold carries it — but the evidence line was bad.) |
+| **M (Math)** | "FrontierMath T1-3 **>40%**" | FrontierMath is saturating across *all* tiers: **T1-3 ≈ 89%** (Sol); even **Tier 4 v2** — research-level, error-corrected — is **88%** (Claude Fable 5), Sol ≈ 83%, and has been **>40% since GPT-5.2** | [Epoch, Tier 4 v2](https://epoch.ai/benchmarks/frontiermath-tier-4-v2) **[primary]** (eval 2026-06-12); T1-3 via benchlm.ai **[secondary]** | **WRONG-as-stated.** ">40%" (from bracai.eu **[weak]**) treats a *saturating* benchmark as a hard ceiling — even the hardest tier is ~88%. (M=100/Virtuoso is now over-determined: IMO gold *and* FrontierMath.) |
 | K (Knowledge) | 100/Expert (GPQA ~94.3%) | GPQA Diamond **94.6%** (Sol) | benchlm.ai **[secondary]** | OK — consistent. |
+
+*Correction (this audit ate its own dog food): a first pass of the Math row
+mis-cited FrontierMath's hard tier as "~40–48%" from a stale figure (GPT-5.4
+@ 0.476) — itself a version error, the exact failure this audit exists to
+catch. The hard tier (Tier 4 v2) is ~88%. Fixed above; logged as a correction
+turn in THREAD.md, 2026-07-14. The lesson holds twice over: a source-discipline
+audit still needs its own sources checked.*
 
 **Source-quality finding (independent of Sol):** four axes — **Reading &
 Writing, Working Memory, LT Memory Retrieval,** and the **FrontierMath line
