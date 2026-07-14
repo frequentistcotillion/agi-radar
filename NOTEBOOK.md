@@ -52,27 +52,83 @@ human level; dynamic is close to zero, and has barely moved in three years.
 The heart of the chart. For eras 1–2 we use Hendrycks' own published
 per-domain scores. For mid-2026 (no published scores exist), each axis is
 carried by the public benchmark(s) we judged closest to the domain's
-*construct* — with the judgment calls disclosed:
+*construct* — with the judgment calls disclosed.
 
-| Axis | In plain terms | Mid-2026 evidence | Reading |
-|---|---|---|---|
-| Mathematics | competition & research math | IMO gold (2025); FrontierMath >40% | 100, **Virtuoso ring** — the one axis with true percentile evidence |
-| General Knowledge | breadth + depth of world knowledge | GPQA Diamond ~94% vs ~65% expert mean | 100, **Expert ring** (downgraded from Virtuoso in review — an expert *mean* isn't a 99th-pct calibration) |
-| Reading & Writing | comprehension + composition | LongBench v2 64% vs 54% timed experts | 100, at anchor (Expert ring removed in review — that's a reading test, not a writing one) |
-| Reasoning (static) | solve the fixed puzzle | ARC-AGI-2: ~54% standalone frontier vs ~60% human panel | 85 — an unverifiable "85%" leaderboard claim was *excluded*; we used the conservative verified numbers |
-| Auditory | understand sound, speech, music | MMAU ~76% vs ~82% human | 80 |
-| Visual | actually *see* — rotation, counting, correspondence | BLINK ~71% vs ~96% human | 70 — we deliberately use a perception benchmark, not the flattering knowledge-heavy MMMU (94%) |
-| Working Memory | hold and manipulate context | MRCR 8-needle @1M: ~76% | 60 — huge context ≠ faithful use of it |
-| LT Memory Retrieval | recall without confabulating | hallucination 3–9%, halved by extended thinking | 60 |
-| Speed | psychometric processing speed | none exists | 30 — era-2 value carried, lowest-confidence cell on the chart |
-| LT Memory Storage | *accumulate* knowledge from use | MemoryBench et al.: SOTA "far from satisfying" | 10 — the standing bottleneck |
-| Reasoning (dynamic) | learn a novel environment by acting | ARC-AGI-3 <1%; BALROG NetHack ~7%; humans breeze both | 5 — triangulated across three eval families after a reviewer challenged single-eval reliance |
+**Every point on this chart is a three-link claim — a small syllogism:**
 
-Full sources with dates: [data/era3_evidence.csv](data/era3_evidence.csv).
+1. **an axis** — a cognitive *construct* from the CHC framework (what we're
+   trying to measure);
+2. **a benchmark** — the public eval we judged best *operationalizes* that
+   construct (the bridge from concept to number);
+3. **a source** — the *specific published datum*, from a named source of
+   stated quality, that sets where the point lands.
+
+A point is only as strong as its weakest link. The table below makes all
+three explicit for every axis, including the **source and its grade**
+(*primary* = the benchmark's own site / paper / an official leaderboard;
+*secondary* = a third-party aggregator or blog re-reporting it). Making the
+chain legible is what lets a reader — or a newer model's results — *falsify*
+a point. As of the 2026-07-14 audit below, several points are now falsified.
+
+| Axis | Construct (link 1) | Benchmark & datum (link 2) | Source [grade] (link 3) | Plotted score |
+|---|---|---|---|---|
+| Mathematics | competition & research math | IMO gold (2025); FrontierMath ">40%" | IMO official; FM via bracai.eu **[secondary]** | 100, **Virtuoso ring** — the one axis with true percentile evidence (IMO) |
+| General Knowledge | breadth + depth of world knowledge | GPQA Diamond ~94% vs ~65% expert mean | epoch.ai / benchlm.ai **[primary/secondary]** | 100, **Expert ring** (an expert *mean* isn't a 99th-pct calibration) |
+| Reading & Writing | comprehension + composition | LongBench v2 64% vs 54% timed experts | llm-stats.com **[secondary]** | 100, at anchor (that's a reading test, not a writing one) |
+| Reasoning (static) | solve the fixed puzzle | ARC-AGI-2: ~54% standalone frontier vs ~60% human panel | arcprize.org **[primary]** | 85 — an unverifiable "85%" leaderboard claim was *excluded* (⚠ now superseded — see audit) |
+| Auditory | understand sound, speech, music | MMAU ~76% vs ~82% human | mmaubench.github.io **[primary]** | 80 |
+| Visual | actually *see* — rotation, counting, correspondence | BLINK ~71% vs ~96% human | BLINK paper (arXiv) **[primary]** | 70 — perception benchmark, not the flattering knowledge-heavy MMMU (94%) |
+| Working Memory | hold and manipulate context | MRCR 8-needle @1M: ~76% | awesomeagents.ai **[secondary]** | 60 — huge context ≠ faithful use of it |
+| LT Memory Retrieval | recall without confabulating | hallucination 3–9%, halved by extended thinking | digitalapplied.com **[secondary]** | 60 |
+| Speed | psychometric processing speed | none exists | — **[no source]** | 30 — era-2 value carried, lowest-confidence cell on the chart |
+| LT Memory Storage | *accumulate* knowledge from use | MemoryBench et al.: SOTA "far from satisfying" | MemoryBench/CL-Bench (arXiv) **[primary]** | 10 — the standing bottleneck |
+| Reasoning (dynamic) | learn a novel environment by acting | ARC-AGI-3 <1%; BALROG NetHack ~7%; humans breeze both | arcprize.org **[primary]** | 5 — triangulated across three eval families (⚠ now falsified — see audit) |
+
+Full per-point evidence with dates: [data/era3_evidence.csv](data/era3_evidence.csv).
 Rows tagged `ADJACENT` there (e.g. METR's 16-hour task horizons) are
 deliberately *excluded* from axes — that's fast-rising agentic execution in
 familiar tool-rich domains, a different construct than novel-environment
 adaptation, and folding it in would blur the chart's key finding.
+
+## Data-quality audit — 2026-07-14 (triggered by GPT-5.6 Sol)
+
+Making the axis → benchmark → source chain explicit did exactly what a good
+audit trail should: it surfaced bad points. Two kinds of rot showed up —
+**weak sources** (four axes rest on secondary aggregators, not primary
+benchmark sources) and **falsified numbers** (a model released *after* our
+snapshot, **GPT-5.6 Sol** — OpenAI, 2026-07-09, now the top-ranked model at
+[Epoch, ECI 162](https://epoch.ai/models/gpt-5-6-sol)) beats several of our
+plotted points. This is **not just staleness**: at least one point was
+*mis-stated at the time*.
+
+**The chart image (`radar.svg`) has NOT been re-plotted** — its points are
+still the 2026-07-03 numbers. Per this thread's correction discipline, a
+correction is logged *before* it is drawn. The re-score is the next step
+(scoped at the bottom).
+
+| Axis | Plotted (2026-07-03) | Current data (GPT-5.6 Sol / 2026-07) | Source [grade] | Verdict |
+|---|---|---|---|---|
+| **R-dynamic** | 5 — "ARC-AGI-3 <1%, hasn't moved" | ARC-AGI-3 **7.78% semi-private / 13.33% public**; **won game ft09 at 87%** (max reasoning) | [arcprize.org](https://arcprize.org/results/openai-gpt-5-6-sol) **[primary]**, 2026-07-09 | **WRONG-as-stated.** Our single sharpest claim ("dynamic reasoning ≈ 0, flat for 3 years") is falsified — the axis is off the floor and one game is essentially solved. Highest-priority fix. |
+| **R-static** | 85 — "~54% standalone; we *excluded* an unverified 85%" | ARC-AGI-2 **92.5%** (max reasoning) | [arcprize.org](https://arcprize.org/results/openai-gpt-5-6-sol) **[primary]**, 2026-07-09 | **STALE.** Now at/above the anchor. Ironic: the ~85% we discarded as unverifiable is beaten by a *verified* 92.5%. |
+| **M (Math)** | "FrontierMath T1-3 **>40%**" | FrontierMath is version-fragmented: **T1-3 ≈ 89%** (Sol) vs the harder full set **≈ 40–48%** (GPT-5.4 @ 0.476) | benchlm.ai / llm-stats.com **[secondary]**; our datum was from bracai.eu **[weak]** | **WRONG-as-stated / mis-sourced.** ">40%" understates T1-3 by ~half *and* silently conflates two different FrontierMath versions. (The M=100/Virtuoso *conclusion* survives — IMO gold carries it — but the evidence line was bad.) |
+| K (Knowledge) | 100/Expert (GPQA ~94.3%) | GPQA Diamond **94.6%** (Sol) | benchlm.ai **[secondary]** | OK — consistent. |
+
+**Source-quality finding (independent of Sol):** four axes — **Reading &
+Writing, Working Memory, LT Memory Retrieval,** and the **FrontierMath line
+of Mathematics** — are set by *secondary* aggregators (llm-stats.com,
+awesomeagents.ai, digitalapplied.com, bracai.eu), not by the benchmark's own
+results. Even where the number is right, the provenance is one hop too long.
+These are the first re-sourcing targets.
+
+**Scoped next step — a proper re-score (not done here):** (1) re-source every
+point to a *primary* benchmark result; (2) re-estimate the era-3 column
+against current frontier models (GPT-5.6 Sol, Claude Fable 5, etc.), not the
+mid-2026 snapshot; (3) run it through an adversarial consult before locking,
+the same discipline that produced the original — then regenerate `radar.svg`
+and its hash as a dated new version. The headline finding to re-examine
+first: is "dynamic reasoning is the flat, near-zero bottleneck" still true
+when a frontier model wins an ARC-AGI-3 game? The gap is narrowing, not
+absent — and that is itself the news.
 
 ## What the chart says
 
@@ -86,6 +142,12 @@ the remaining gap isn't more of the same, it's concentrated in one
 qualitatively different capability. Which cuts both ways — steady trends
 understate the jump risk if continual learning cracks, and overstate
 generality if you extrapolate the composite line naively.
+
+> **⚠ Update (2026-07-14):** this section's central claim — dynamic reasoning
+> pinned near zero — is now under revision. A model released after this chart
+> (GPT-5.6 Sol) scores 7.78–13.33% on ARC-AGI-3 and won one game outright.
+> The bottleneck is *narrowing*, not absent. See the Data-quality audit above;
+> the chart image still shows the pre-Sol numbers pending a re-score.
 
 ## How it was built (one day, 2026-07-03)
 
@@ -111,6 +173,11 @@ free Python; the SHA-256 in [recipe.md](recipe.md) pins the exact artifact.
 
 ## Known weaknesses (our own list)
 
+- **Several points are stale or were mis-sourced** — see the 2026-07-14
+  Data-quality audit above. R-dynamic and R-static are superseded by GPT-5.6
+  Sol; the FrontierMath evidence line was under-specified and from a secondary
+  source; four axes rest on aggregators rather than primary results. A
+  re-score is scoped but not yet done.
 - **Speed** has no valid public benchmark; its value is a placeholder.
 - **Visual** has a construct gap: models ace knowledge-heavy image tests
   while failing "glance" perception; we scored the perception construct.

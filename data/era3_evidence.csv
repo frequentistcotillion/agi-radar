@@ -17,3 +17,12 @@ S,(no clean public benchmark),n/a,n/a,2026,Hendrycks S = psychometric processing
 R-dynamic-2,BALROG (agentic games; novel-env slice),"composite ~58% but NetHack 6.8% / MiniHack 40% (SOTA Gemini 3 Pro family)",Gemini-3-Pro,2026,humans make deep NetHack progress; LLM depth ~1-2%,balrogai.com; arxiv.org/abs/2411.13543
 R-dynamic-3,MemoryBench / CL-Bench (learning-during-use),"SOTA 'far from satisfying' (authors)",n/a,2026-06,humans accumulate skill continuously,arxiv.org/abs/2510.17281; arxiv.org/pdf/2606.05661
 R-dynamic-ADJACENT,METR 50% time horizon (prior-rich agentic execution - NOT the novel-env construct),">=16h (80% horizon ~3h); doubling ~4.3mo post-2023",Claude Mythos,2026-05-09,horizon defined vs skilled-human task time,metr.org/time-horizons; epoch.ai/benchmarks/metr-time-horizons
+#
+# === 2026-07-14 UPDATE: GPT-5.6 Sol (OpenAI, released 2026-07-09; Epoch ECI 162, rank 1/211). ===
+# These SUPERSEDE the as-of-2026-07-03 rows above where noted. The radar (radar_scores.csv) is NOT yet re-scored;
+# see NOTEBOOK.md "Data-quality audit". Sources graded [PRIMARY] / [secondary] inline.
+R-static,ARC-AGI-2 (max reasoning),92.5%,GPT-5.6 Sol,2026-07-09,~60% human panel average,arcprize.org/results/openai-gpt-5-6-sol [PRIMARY] -- supersedes the 54%/72.9% July-3 row; the "85%" we excluded as unverified is now exceeded by a verified 92.5%. Plotted score 85 is STALE (now at/above anchor).
+R-dynamic,ARC-AGI-3 (max reasoning),7.78% semi-private / 13.33% public; won game ft09 at 87%,GPT-5.6 Sol,2026-07-09,humans complete most games unaided,arcprize.org/results/openai-gpt-5-6-sol [PRIMARY] -- supersedes the "<1%" July-3 row. Plotted score 5 is WRONG-as-stated; axis is off the floor.
+R-adjacent,ARC-AGI-1 (max reasoning),96.5%,GPT-5.6 Sol,2026-07-09,n/a,arcprize.org/results/openai-gpt-5-6-sol [PRIMARY] -- context for the static/dynamic split.
+K,GPQA Diamond,94.6%,GPT-5.6 Sol,2026-07-09,~65% PhD-level domain experts,benchlm.ai/models/gpt-5-6-sol [secondary] -- consistent with the July-3 94.3% row (Gemini 3.1 Pro).
+M,FrontierMath T1-3,~89% (version-specific),GPT-5.6 Sol,2026-07-09,FM problems stump professional mathematicians,benchlm.ai/models/gpt-5-6-sol [secondary] -- VERSION CONFLATION: harder full/legacy set ~40-48% (llm-stats GPT-5.4 @ 0.476). Our July-3 ">40% T1-3" (bracai.eu [weak]) both understates T1-3 and mixes versions. NOTE: OpenAI has not published Sol's official FM score; 89% is a third-party leaderboard figure.

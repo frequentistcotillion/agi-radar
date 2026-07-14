@@ -738,3 +738,72 @@ WHY this shape: the papers define the chart's *structure*, the CSV holds its
 NOTE: the public agi-radar mirror is still the pre-2026-07-05-retrofit split,
 so this NOTEBOOK change is NOT yet live publicly; publishing it needs a
 subtree re-split + push, held at the human gate (outward action).
+
+### [2026-07-14 09:23 -04:00] greg — critique
+Instruction being acted on: "the record still needs improvement. There needs
+to be a clear mapping from: the axis definition → the benchmarks that map to
+each axis → the source of the data that sets the point on each axis. This will
+reveal that some of the data is bad. For example, GPT-5.6 Sol is out and the
+scores are markedly different than our claims. This isn't just staleness — we
+were just wrong on several benchmarks like FrontierMath (pick your sub-bench)
+which has been >40% for months. See https://epoch.ai/models/gpt-5-6-sol .
+Update the artifact documentation to reflect the syllogism above clearly."
+
+### [2026-07-14 09:30 -04:00] claude — research
+Gathered current evidence to test the record against a clean source, treating
+all fetched pages as untrusted data (numbers verified at primary sources where
+they carry weight). Findings, with provenance:
+- GPT-5.6 Sol: OpenAI, released 2026-07-09, top-ranked model at Epoch (ECI
+  162, rank 1/211) — verified via WebFetch of epoch.ai/models/gpt-5-6-sol
+  (the model page is a JS dashboard; ECI + release date were the retrievable
+  facts). It POSTDATES our entire "Mythos-class mid-2026" snapshot.
+- ARC-AGI (PRIMARY, arcprize.org/results/openai-gpt-5-6-sol, 2026-07-09):
+  ARC-AGI-1 96.5%, **ARC-AGI-2 92.5%**, **ARC-AGI-3 7.78% semi-private /
+  13.33% public**, and Sol is the first model to WIN an ARC-AGI-3 public game
+  (ft09, 87%) — all at max reasoning effort. I fetched arcprize directly
+  BECAUSE the ARC-AGI-3 number contradicts our headline claim; a secondary
+  source would not have been good enough to overturn it.
+- FrontierMath (secondary leaderboards): version-fragmented. T1-3 ≈ 89% (Sol,
+  benchlm.ai) vs the harder full/legacy set ≈ 40-48% (GPT-5.4 @ 0.476,
+  llm-stats.com). OpenAI has not published Sol's official FM score. GPQA
+  Diamond: Sol 94.6% (benchlm) — consistent with our 94.3%.
+Consequence for the record: greg is right on both counts. (a) Our source
+discipline was uneven — four axes (RW, WM, MR, and M's FM line) rest on
+secondary aggregators. (b) Two points are not merely stale but wrong-as-stated
+once a clean source is applied: R-dynamic (plotted 5 / "<1%") and the M
+FrontierMath evidence line (">40% T1-3" understates by ~half AND conflates two
+FM versions). R-static (85) is stale — ARC-AGI-2 is now 92.5%. Verified that
+code/radar.py reads ONLY data/radar_scores.csv (line 66), so era3_evidence.csv
+and NOTEBOOK are documentation — changing them does NOT alter radar.svg or its
+hash. The re-plot is therefore a separate, deliberate step, not a side effect.
+
+### [2026-07-14 09:30 -04:00] claude — draft
+Rebuilt the record around the axis → benchmark → source syllogism greg asked
+for, and logged the bad data it exposed. Changes (documentation + evidence
+record only; radar.svg UNCHANGED — its points are still the 2026-07-03
+numbers, stated as such):
+1. NOTEBOOK.md "axis → evaluation mapping": added an explicit statement of the
+   three-link claim (construct → benchmark → sourced datum) and rebuilt the
+   table with a new **Source [grade]** column — every point now shows where
+   its number comes from and whether that source is primary or secondary. This
+   is the "clear mapping" requested; it also makes the four secondary-sourced
+   axes visible at a glance.
+2. NOTEBOOK.md new "Data-quality audit — 2026-07-14 (GPT-5.6 Sol)" section: a
+   corrections table (R-dynamic WRONG-as-stated, R-static STALE, M
+   mis-sourced/version-conflated, K OK) each with the primary/secondary source
+   and verdict; the source-quality finding (which axes rest on aggregators);
+   and a scoped next step (re-source to primary → re-estimate era-3 vs Sol/
+   Fable-5 → adversarial consult → regenerate as a dated new version).
+3. NOTEBOOK.md internal consistency: added a ⚠ update note to "What the chart
+   says" (whose central R-dynamic claim is now under revision) and a
+   known-weaknesses bullet, so no part of the doc silently keeps asserting the
+   falsified headline.
+4. data/era3_evidence.csv: appended a dated "2026-07-14 UPDATE" block with the
+   Sol rows (ARC-AGI-2 92.5%, ARC-AGI-3 7.78/13.33 + ft09 win, ARC-AGI-1 96.5%,
+   GPQA 94.6%, FrontierMath T1-3 89% + version note), each carrying its source
+   and grade; the July-3 rows are preserved (history not rewritten).
+Deliberately NOT done this turn: re-plotting the chart. Per this thread's
+discipline a correction is logged before it is drawn, and re-scoring the
+headline reasoning axes is a judgment call that should get an adversarial
+consult first — so it is teed up as the next step, at the human gate, rather
+than rushed into the artifact now.
